@@ -15,9 +15,12 @@ jobs:
           python-version: '3.12'
       - name: Python and shell syntax
         run: |
-          python -m compileall -q roboweave scripts/official_probe.py scripts/verify_roboweave_rai.py scripts/verify_ros_boundaries.py
-          bash -n scripts/run_roboweave_rai.sh scripts/start_roboweave_rai_container.sh
+          python -m compileall -q roboweave scripts/official_probe.py scripts/verify_roboweave_rai.py scripts/verify_ros_boundaries.py scripts/verify_roboweave_arm.py scripts/verify_arm_boundaries.py
+          bash -n scripts/run_roboweave_rai.sh scripts/start_roboweave_rai_container.sh scripts/run_roboweave_arm.sh scripts/start_roboweave_arm.sh scripts/setup_arm_sim.sh
+          python -m unittest discover -s roboweave/arm -p test_contracts.py
       - name: Dashboard JavaScript syntax
         run: |
           python -c "from pathlib import Path; import re; Path('/tmp/roboweave-ui.js').write_text(re.search(r'<script>(.*?)</script>', Path('roboweave/index.html').read_text(), re.S).group(1))"
           node --check /tmp/roboweave-ui.js
+          python -c "from pathlib import Path; import re; Path('/tmp/arm-ui.js').write_text(re.search(r'<script>(.*?)</script>', Path('roboweave/arm/index.html').read_text(), re.S).group(1))"
+          node --check /tmp/arm-ui.js

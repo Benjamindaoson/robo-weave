@@ -1,0 +1,10 @@
+# Verified core versions; full live-environment inventory is in docs/evidence/arm/.
+numpy==1.26.4
+mani_skill==3.0.1
+sapien==3.0.3
+mplib==0.1.1
+torch==2.6.0
+gymnasium==1.4.0
+toppra==0.6.10
+scipy==1.15.3
+Pillow==12.3.0

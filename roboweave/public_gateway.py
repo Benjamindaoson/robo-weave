@@ -14,7 +14,7 @@ from starlette.routing import Route
 
 PASSWORD = os.environ['ROBOWEAVE_SHARE_PASSWORD']
 TOKEN = os.environ['ROBOWEAVE_SHARE_TOKEN']
-UPSTREAM = 'http://127.0.0.1:8768'
+UPSTREAM = os.environ.get('ROBOWEAVE_UPSTREAM', 'http://127.0.0.1:8768')
 attempts = {}
 LOGIN = '''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>RoboWeave · 访问验证</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f3f7fc;color:#172b4d;font:16px system-ui}main{width:min(360px,80vw);padding:40px;background:white;border:1px solid #dce5ef;border-radius:22px;box-shadow:0 16px 60px #234b7510}small{color:#2675ed;font-weight:700;letter-spacing:2px}h1{font-size:30px;margin-bottom:8px}p{color:#6b7e95;line-height:1.7}input,button{box-sizing:border-box;width:100%;padding:14px;border-radius:10px;font:inherit;margin-top:12px}input{border:1px solid #cbd7e5}button{background:#2469eb;color:white;border:0;cursor:pointer}</style><main><small>ROBOTICS · AGENT OS</small><h1>RoboWeave</h1><p>真实机器人仿真与 Agent 执行工作台。<br>请输入分享者提供的访问码。</p><form method="post" action="/login"><input name="password" type="password" autocomplete="current-password" placeholder="访问码" aria-label="访问码" required><button>进入演示</button></form></main></html>'''
 POLL_SHIM = '''<script>

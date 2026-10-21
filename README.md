@@ -1,77 +1,134 @@
-# RoboWeave — RAI / ROS 2 Execution & Recovery
+# RoboWeave — RAI / ROS 2 Manipulation & Recovery
 
-RoboWeave turns a natural-language task into **real ROS 2 skill calls, execution feedback, sensor verification, and bounded failure recovery**. It provides a concrete execution-layer prototype for later robot integration.
+RoboWeave turns a natural-language manipulation task into **real ROS 2 skill calls,
+Panda arm motion, contact feedback, native task verification and bounded recovery**.
+The primary demonstration now runs **ManiSkill / SAPIEN PickCube**.
 
-**Current scope:** ROS 2 Jazzy + turtlesim planar motion. Physical robots, arm manipulation, collision-aware navigation, ARM/Jetson deployment and onboard/offline LLM inference have **not** been validated. DeepSeek currently runs through a remote API.
+**[Open the live arm demo](https://wedding-transcript-visitors-ultram.trycloudflare.com)**
+— HTTPS with a separately supplied access code. This temporary Quick Tunnel
+hostname may change or expire; no permanent domain has been configured.
 
-![Actual application after a successful recovery task](docs/evidence/dashboard.png)
+![Actual Panda manipulation dashboard](docs/evidence/arm/dashboard.png)
 
 ## What actually runs
 
 ```text
-Task → RAI ReAct / DeepSeek → validated skill → ROS 2 Action
-                                             ↓ feedback / result
-                            turtlesim ← Twist controller
-                               ↓ Pose
-                         sensor verifier → success / bounded recovery
+Task → RAI ReAct / DeepSeek → validated ordered tools
+                                 ↓
+                /roboweave/arm/manipulate ROS 2 Action
+                                 ↓
+                Panda motion planner → SAPIEN physics
+                                 ↓
+                joint / TCP / cube / contact feedback
+                                 ↓
+                native verifier → success / bounded recovery
 ```
 
-- **Planner:** upstream RAI ReAct chooses tools from live observations and an ordered coordinate task.
-- **Executor:** `ROS2Connector` calls `/roboweave/move_to_pose`, with typed goals, feedback, results and cancellation.
-- **Recovery:** only a confirmed, aborted injected transient failure gets one re-observation and retry. Cancellation, timeout, stale observations and unknown execution state do not automatically retry.
-- **Verifier:** measured position and observation age determine success; LLM prose cannot override the verdict.
-- **Shared state / trajectory:** per-task events, Agent messages, actual pose trajectory and final results are persisted.
-- **Dashboard:** native simulator screenshots, current pose, actual event timeline and task history, with an authenticated allowlisted presentation gateway.
+- **Planner:** upstream RAI ReAct reads observations and selects `approach`,
+  `grasp`, `transport`, `verify`, one at a time. Only this task family is supported.
+- **Executor:** RAI `ROS2Connector` invokes a native ROS 2 Action with goals,
+  feedback, results, deadlines and cancellation. One separate thread owns physics.
+- **Recovery:** the test physically keeps the fingers open on the first grasp.
+  Contact verification fails and the Action returns ABORTED(6). The runtime
+  re-observes, retracts/reapproaches and retries once. Unknown execution state,
+  timeout and cancellation do not automatically retry.
+- **Verifier:** actual contact, measured lifting, stationary robot, target distance
+  ≤ 25 mm and native environment `success` determine the verdict, not LLM prose.
+- **Logger / dashboard:** every commanded action and measured state is recorded;
+  the UI displays sampled real rendered frames, metrics and execution events.
 
-These are one LLM planner and deterministic execution/recovery/verification modules, not three independent LLM agents.
+This is **one LLM planner plus deterministic execution, recovery and verification
+roles**, not three independent LLM agents.
 
-## Evidence
+## Actual validation
 
 | Check | Observed result |
 |---|---|
-| Unmodified official `examples/agents/react_ros2.py` | Native RotateAbsolute action completed; status 2 → 4, 75 changed poses, 29 HRI response chunks; requested theta 1.2, measured 1.184 rad |
-| Ordered two-goal task | Both sensor postconditions passed, 12.26 seconds in the recorded run |
-| Injected failure | Native ABORTED(6), re-observation, one retry, task succeeded |
-| Cancellation | Native CANCELED(5), final linear and angular velocity zero |
-| Invalid goal / deadline | Out-of-bounds goal rejected; timeout aborted with 21 feedback samples, then zero velocity |
-| Public HTTP task | Authenticated task completed; unauthenticated API 401, cross-origin command 403, disallowed path 404 |
-| Targeted tests | 57 upstream-related tests + 3 application guard tests = **60 passed** |
-| Restart | Simulator feedback recovered after container restart; UI recovery task succeeded again |
+| Unmodified official `pick_cube.solve`, seed 0 | Native success, contact and stationary verdict all true |
+| RAI → ROS 2 → Panda, seeds 0 and 1 | All four skills succeeded in both scenes |
+| Physically open-gripper fault | Contact false → ABORTED(6) → one recovery → success |
+| External authenticated HTTPS task | Full fault/recovery task succeeded |
+| Invalid skill | Native ROS goal rejected |
+| Deadline / cancellation | ABORTED(6) / CANCELED(5); physics steps and joints unchanged after cancellation |
+| Regression and guard tests | 69 passed, including 57 existing upstream-related checks |
+| Browser | Real frame displayed; start/stop used; state and timeline updated |
 
-These are engineering checks and individual execution records, not benchmark success rates. See [machine-readable evidence](docs/evidence/verification.json) and the [normal](docs/evidence/normal-events.jsonl), [recovery](docs/evidence/recovery-events.jsonl), and [cancellation](docs/evidence/cancel-events.jsonl) event traces.
+The recorded public recovery task took **12.78 s**, with approximately **7.4 mm**
+target error and **267 mm** cube lift. These are individual engineering records,
+not benchmark success rates or proof of general manipulation capability.
 
-An early stale-observation failure exposed Python ROS executor scheduling delays. The application now uses a single-threaded callback executor and a separate motion worker, preserving the one-second observation threshold. A stale X11 lock after container restart was also reproduced and repaired. The serving process supervises its essential children.
+Receipts: [public recovery](docs/evidence/arm/public-verification.json),
+[normal seed 0](docs/evidence/arm/normal-seed0.json),
+[normal seed 1](docs/evidence/arm/normal-seed1.json),
+[ROS boundaries](docs/evidence/arm/boundaries.json),
+[official baseline](docs/evidence/arm/official-baseline.json).
+
+The official planner initially segfaulted with NumPy 2.2.6. An isolated NumPy
+1.26.4 override repaired the same reproduction, consistent with
+[upstream issue 1100](https://github.com/mani-skill/ManiSkill/issues/1100).
+The original benchmark environment was preserved. Reset now advances physics
+before publishing contact evidence to clear previous-episode contact buffers.
 
 ## Run
 
-The verified installation uses Linux x86_64, ROS 2 Jazzy, Python 3.12, a project-local `.venv`, and the upstream `uv.lock`. This 2D demonstration does not require a GPU.
+Verified server project: `/data/projects/rai-roboweave`. In the prepared workspace:
 
-See [deployment instructions](docs/roboweave-deployment.md) for the tested prepared-workspace commands and the new clean-build Docker recipe. **A second clean-machine image build has not yet been verified.** The existing cloud deployment is running; publication does not replace or restart it.
+```bash
+bash scripts/start_roboweave_arm.sh
+python3 scripts/verify_roboweave_arm.py --seed 0
+python3 scripts/verify_roboweave_arm.py --seed 0 --fault
+```
 
-Public demonstration: [RoboWeave RAI](https://resort-catherine-continent-tackle.trycloudflare.com). Access requires a separately supplied password. This is a temporary Quick Tunnel hostname and may change or expire; credentials are never included in this repository. Do not expose the unauthenticated runtime directly to the Internet.
+Runtime: `127.0.0.1:8770`; authenticated gateway: `127.0.0.1:8771`;
+simulator: `127.0.0.1:8772`; ROS domain: 74. systemd and Docker supervise the
+services. Only the authenticated gateway is tunneled. Raw control ports are private.
 
-## Repository map
+See [deployment, tests and hardware migration](docs/arm-deployment.md).
+The deployed project-local `.venv-arm` reuses reviewed installed dependencies
+read-only with a local NumPy override. A clean-machine standalone install and
+a new full image build remain **unverified**.
 
-| Path | Purpose |
+## Code map
+
+| Path | Responsibility |
 |---|---|
-| `roboweave/runtime.py` | RAI execution loop, ordered-plan enforcement, bounded recovery and receipts |
-| `roboweave/motion_node.py` | Actual turtlesim ROS 2 adapter and failure injection |
-| `src/roboweave_interfaces/` | MoveToPose goal / feedback / result contract |
-| `roboweave/index.html` | Live task UI |
-| `roboweave/public_gateway.py` | Authentication and route / Origin checks |
-| `scripts/verify_roboweave_rai.py` | HTTP → LLM → RAI → ROS → simulator integration checks |
-| `scripts/official_probe.py` | Official Agent entrypoint probe |
-| `scripts/verify_ros_boundaries.py` | Native goal rejection and timeout checks |
-| `roboweave/test_guards.py` | Out-of-plan, concurrent-call and unknown-state guards |
+| `roboweave/arm/runtime.py` | RAI tools, ordered skills, recovery and receipts |
+| `roboweave/arm/ros_adapter.py` | Native Action lifecycle and measured state |
+| `roboweave/arm/sim_worker.py` | Official planner, physics, frames and trajectories |
+| `roboweave/arm/contracts.py` | Parameter and native postcondition validation |
+| `src/roboweave_interfaces/action/Manipulate.action` | Skill / feedback / result contract |
+| `roboweave/arm/index.html` | Live arm dashboard |
+| `roboweave/public_gateway.py` | Authentication, route allowlist, Origin checks |
+| `scripts/verify_roboweave_arm.py` | HTTP → LLM → ROS → physics integration checks |
+| `scripts/verify_arm_boundaries.py` | Rejection, timeout and cancel checks |
 
-## Migration to a robot
+## Hardware transfer and limits
 
-Keep the task runtime, explicit Action contract, feedback handling, failure latch and logging. Replace the turtlesim driver in `motion_node.py` and the Pose conversion/subscription in `Runtime.on_pose` with the selected robot's driver and measured state. Define physical units, coordinate frames, transforms, workspace limits and tolerances: the present `[1,10]` bounds and distance thresholds use turtlesim units.
+This is real 3-D robot **simulation**, not physical robot deployment. The official
+motion planner uses privileged object geometry/state; it is not a vision-driven
+policy or learned VLA. The cube is moved to the target and **held**, not released.
+Physics pauses between skills. DeepSeek runs through a remote API.
 
-The physical adapter must own emergency stop, collision checks, command watchdog and speed/acceleration limits. Re-run the acceptance suite with that hardware. This repository is an interface-validation starting point, not a drop-in robot driver or a physical safety certification.
+Keep the RAI layer and ROS contract; replace the simulator adapter with the robot
+driver / MoveIt implementation. Real deployment still requires perception,
+calibration/TF, target mapping, workspace/collision limits, command watchdog,
+independent emergency stop and measured postcondition thresholds. Simulator
+cancellation does not establish physical stopping safety. No hardware, Jetson/ARM,
+offline onboard inference or long-horizon LIBERO result is claimed.
 
-## Upstream and license
+The previous turtlesim code and evidence remain in
+[the 2-D baseline](README.turtlesim.md). Its service and the existing OpenETA
+assets were preserved; the arm demonstration is the new primary entry.
 
-Based on [RobotecAI/RAI](https://github.com/RobotecAI/rai), commit `b018729833742c6f71e1e9f332ee2b435676fb4f`. Upstream Git history, source, examples and Apache-2.0 license are retained. The original README is [README.upstream.md](README.upstream.md). Vendored [rai_interfaces](https://github.com/RobotecAI/rai_interfaces) is pinned to `f03dc0f217679980447dfead177979f485eb44f6` with its original license.
+## Provenance
 
-Upstream workflows requiring RobotecAI-specific runners or deployment credentials are preserved under `docs/upstream-workflows/`. The active RoboWeave CI checks source syntax only; live ROS and LLM tests are separately reported above.
+Based on [RobotecAI/RAI](https://github.com/RobotecAI/rai), commit
+`b018729833742c6f71e1e9f332ee2b435676fb4f`. Upstream Git history, source, examples
+and Apache-2.0 license remain. [Original README](README.upstream.md).
+Vendored [rai_interfaces](https://github.com/RobotecAI/rai_interfaces) remains pinned
+to `f03dc0f217679980447dfead177979f485eb44f6` with its license.
+Manipulation imports [ManiSkill's official Panda planner](https://github.com/mani-skill/ManiSkill/tree/main/mani_skill/examples/motionplanning/panda).
+
+CI checks Python, shell, frontend JavaScript and pure contracts. Live ROS,
+rendering and LLM tests require the prepared server and are reported separately.
+API keys, share passwords and raw provider logs are excluded from GitHub.

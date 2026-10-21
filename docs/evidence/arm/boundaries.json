@@ -1,0 +1,14 @@
+{
+  "invalid_goal_rejected": true,
+  "timeout_ros_status": 6,
+  "timeout_reason": "execution_timeout",
+  "cancellation_ros_status": 5,
+  "cancellation_reason": "cancelled",
+  "feedback_samples": 2,
+  "paused_steps": [
+    9,
+    9
+  ],
+  "joint_positions_unchanged": true,
+  "note": "Simulator pauses physics after cancel; this is not a validated physical robot emergency stop."
+}

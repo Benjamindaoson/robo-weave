@@ -1,0 +1,33 @@
+{
+  "source": "unmodified ManiSkill 3.0.1 official pick_cube.solve",
+  "seed": 0,
+  "elapsed": 0.2898380756378174,
+  "evaluation": {
+    "success": [
+      true
+    ],
+    "is_obj_placed": [
+      true
+    ],
+    "is_robot_static": [
+      true
+    ],
+    "is_grasped": [
+      true
+    ]
+  },
+  "cube": [
+    [
+      0.02027886174619198,
+      -0.0009062606259249151,
+      0.2862023413181305
+    ]
+  ],
+  "goal": [
+    [
+      0.026815734803676605,
+      -0.0019813179969787598,
+      0.2889334559440613
+    ]
+  ]
+}

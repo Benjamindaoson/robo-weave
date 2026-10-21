@@ -1,0 +1,3947 @@
+{
+  "environment": "ManiSkill · Panda · PickCube-v1",
+  "runtime": "RAI ReAct / ROS 2 Jazzy",
+  "observation": {
+    "timestamp": 1792575600.054076,
+    "environment": "ManiSkill PickCube-v1",
+    "robot": "Panda",
+    "frame_id": "world",
+    "phase": "verify",
+    "steps": 145,
+    "cube_position": [
+      0.019803280010819435,
+      -0.0002773866872303188,
+      0.28727373480796814
+    ],
+    "goal_position": [
+      0.026815734803676605,
+      -0.0019813179969787598,
+      0.2889334559440613
+    ],
+    "tcp_position": [
+      0.017173688858747482,
+      -0.0014513733331114054,
+      0.28825438022613525
+    ],
+    "joint_positions": [
+      -0.056415315717458725,
+      0.28825733065605164,
+      0.059105418622493744,
+      -1.7882672548294067,
+      -0.016653751954436302,
+      2.073269844055176,
+      0.431592732667923,
+      0.018318872898817062,
+      0.018277304247021675
+    ],
+    "distance_to_goal": 0.00740490248426795,
+    "is_grasped": true,
+    "ever_grasped": true,
+    "is_robot_static": true,
+    "native_success": true,
+    "lift_height": 0.267273735255003,
+    "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+    "age_sec": 0.179,
+    "active_job": null,
+    "source": "/roboweave/arm/state"
+  },
+  "task": {
+    "id": "95f1b662185f42e48ce584de8c23a832",
+    "text": "抓取红色方块并移动到绿色目标，验证实际结果。如果抓取失败，使用有限恢复。",
+    "seed": 0,
+    "fault_injection": true,
+    "status": "succeeded",
+    "started_at": 1792575563.1584122,
+    "recoveries": 1,
+    "steps": [
+      {
+        "skill": "approach",
+        "status": "succeeded",
+        "success": true,
+        "reason": "postcondition_passed",
+        "ros_status": 4,
+        "observation": {
+          "timestamp": 1792575567.072251,
+          "environment": "ManiSkill PickCube-v1",
+          "robot": "Panda",
+          "frame_id": "world",
+          "phase": "approach",
+          "steps": 43,
+          "cube_position": [
+            -0.0007478409097529948,
+            0.05364227667450905,
+            0.01999993808567524
+          ],
+          "goal_position": [
+            0.026815734803676605,
+            -0.0019813179969787598,
+            0.2889334559440613
+          ],
+          "tcp_position": [
+            -0.003364761359989643,
+            0.053715094923973083,
+            0.021917112171649933
+          ],
+          "joint_positions": [
+            0.03578045964241028,
+            0.6882758140563965,
+            0.05004507303237915,
+            -1.9341522455215454,
+            -0.06268310546875,
+            2.618149995803833,
+            0.5535558462142944,
+            0.039999958127737045,
+            0.03999995440244675
+          ],
+          "distance_to_goal": 0.2760053873062134,
+          "is_grasped": false,
+          "ever_grasped": false,
+          "is_robot_static": true,
+          "native_success": false,
+          "lift_height": -6.146728992462158e-08,
+          "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+        },
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+        "feedback_samples": 12
+      },
+      {
+        "skill": "grasp",
+        "status": "succeeded",
+        "success": true,
+        "reason": "postcondition_passed",
+        "ros_status": 4,
+        "observation": {
+          "timestamp": 1792575570.9120867,
+          "environment": "ManiSkill PickCube-v1",
+          "robot": "Panda",
+          "frame_id": "world",
+          "phase": "grasp",
+          "steps": 101,
+          "cube_position": [
+            -0.0009479939471930265,
+            0.054763127118349075,
+            0.020636023953557014
+          ],
+          "goal_position": [
+            0.026815734803676605,
+            -0.0019813179969787598,
+            0.2889334559440613
+          ],
+          "tcp_position": [
+            -0.003575003705918789,
+            0.05358768254518509,
+            0.021621443331241608
+          ],
+          "joint_positions": [
+            0.03527031093835831,
+            0.6886976361274719,
+            0.050378892570734024,
+            -1.9341864585876465,
+            -0.06351158022880554,
+            2.617785930633545,
+            0.5535076260566711,
+            0.01830412447452545,
+            0.01827441342175007
+          ],
+          "distance_to_goal": 0.2756343185901642,
+          "is_grasped": true,
+          "ever_grasped": true,
+          "is_robot_static": true,
+          "native_success": false,
+          "lift_height": 0.0006360244005918503,
+          "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+        },
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+        "feedback_samples": 3,
+        "recovered": true,
+        "recovery_count": 1,
+        "initial_failure": "grasp_contact_missing"
+      },
+      {
+        "skill": "transport",
+        "status": "succeeded",
+        "success": true,
+        "reason": "postcondition_passed",
+        "ros_status": 4,
+        "observation": {
+          "timestamp": 1792575573.7854345,
+          "environment": "ManiSkill PickCube-v1",
+          "robot": "Panda",
+          "frame_id": "world",
+          "phase": "transport",
+          "steps": 145,
+          "cube_position": [
+            0.019803280010819435,
+            -0.0002773866872303188,
+            0.28727373480796814
+          ],
+          "goal_position": [
+            0.026815734803676605,
+            -0.0019813179969787598,
+            0.2889334559440613
+          ],
+          "tcp_position": [
+            0.017173688858747482,
+            -0.0014513733331114054,
+            0.28825438022613525
+          ],
+          "joint_positions": [
+            -0.056415315717458725,
+            0.28825733065605164,
+            0.059105418622493744,
+            -1.7882672548294067,
+            -0.016653751954436302,
+            2.073269844055176,
+            0.431592732667923,
+            0.018318872898817062,
+            0.018277304247021675
+          ],
+          "distance_to_goal": 0.00740490248426795,
+          "is_grasped": true,
+          "ever_grasped": true,
+          "is_robot_static": true,
+          "native_success": true,
+          "lift_height": 0.267273735255003,
+          "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+        },
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+        "feedback_samples": 12
+      },
+      {
+        "skill": "verify",
+        "status": "succeeded",
+        "success": true,
+        "reason": "postcondition_passed",
+        "ros_status": 4,
+        "observation": {
+          "timestamp": 1792575574.544959,
+          "environment": "ManiSkill PickCube-v1",
+          "robot": "Panda",
+          "frame_id": "world",
+          "phase": "verify",
+          "steps": 145,
+          "cube_position": [
+            0.019803280010819435,
+            -0.0002773866872303188,
+            0.28727373480796814
+          ],
+          "goal_position": [
+            0.026815734803676605,
+            -0.0019813179969787598,
+            0.2889334559440613
+          ],
+          "tcp_position": [
+            0.017173688858747482,
+            -0.0014513733331114054,
+            0.28825438022613525
+          ],
+          "joint_positions": [
+            -0.056415315717458725,
+            0.28825733065605164,
+            0.059105418622493744,
+            -1.7882672548294067,
+            -0.016653751954436302,
+            2.073269844055176,
+            0.431592732667923,
+            0.018318872898817062,
+            0.018277304247021675
+          ],
+          "distance_to_goal": 0.00740490248426795,
+          "is_grasped": true,
+          "ever_grasped": true,
+          "is_robot_static": true,
+          "native_success": true,
+          "lift_height": 0.267273735255003,
+          "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+        },
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+        "feedback_samples": 0
+      }
+    ],
+    "plan": [
+      "approach",
+      "grasp",
+      "transport",
+      "verify"
+    ],
+    "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+    "duration_sec": 12.78,
+    "final_observation": {
+      "timestamp": 1792575575.850555,
+      "environment": "ManiSkill PickCube-v1",
+      "robot": "Panda",
+      "frame_id": "world",
+      "phase": "verify",
+      "steps": 145,
+      "cube_position": [
+        0.019803280010819435,
+        -0.0002773866872303188,
+        0.28727373480796814
+      ],
+      "goal_position": [
+        0.026815734803676605,
+        -0.0019813179969787598,
+        0.2889334559440613
+      ],
+      "tcp_position": [
+        0.017173688858747482,
+        -0.0014513733331114054,
+        0.28825438022613525
+      ],
+      "joint_positions": [
+        -0.056415315717458725,
+        0.28825733065605164,
+        0.059105418622493744,
+        -1.7882672548294067,
+        -0.016653751954436302,
+        2.073269844055176,
+        0.431592732667923,
+        0.018318872898817062,
+        0.018277304247021675
+      ],
+      "distance_to_goal": 0.00740490248426795,
+      "is_grasped": true,
+      "ever_grasped": true,
+      "is_robot_static": true,
+      "native_success": true,
+      "lift_height": 0.267273735255003,
+      "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+      "age_sec": 0.084,
+      "active_job": null,
+      "source": "/roboweave/arm/state"
+    }
+  },
+  "events": [
+    {
+      "timestamp": 1792575563.1585636,
+      "actor": "User",
+      "kind": "task_received",
+      "text": "抓取红色方块并移动到绿色目标，验证实际结果。如果抓取失败，使用有限恢复。"
+    },
+    {
+      "timestamp": 1792575563.159004,
+      "actor": "Executor",
+      "kind": "action_goal",
+      "skill": "reset",
+      "action": "/roboweave/arm/manipulate"
+    },
+    {
+      "timestamp": 1792575563.328059,
+      "actor": "Executor",
+      "kind": "action_result",
+      "skill": "reset",
+      "success": true,
+      "reason": "postcondition_passed",
+      "ros_status": 4,
+      "observation": {
+        "timestamp": 1792575563.2518418,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "reset",
+        "steps": 2,
+        "cube_position": [
+          -0.0007484888192266226,
+          0.0536438450217247,
+          0.019999943673610687
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          0.012253533117473125,
+          0.0380113385617733,
+          0.18215224146842957
+        ],
+        "joint_positions": [
+          0.035281047224998474,
+          0.40070223808288574,
+          0.019574759528040886,
+          -1.918677568435669,
+          0.03735116124153137,
+          2.336648941040039,
+          0.8043999075889587,
+          0.03999999910593033,
+          0.03999999910593033
+        ],
+        "distance_to_goal": 0.27600574493408203,
+        "is_grasped": false,
+        "ever_grasped": false,
+        "is_robot_static": true,
+        "native_success": false,
+        "lift_height": -5.587935447692871e-08,
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+      },
+      "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+      "feedback_samples": 0
+    },
+    {
+      "timestamp": 1792575563.3332272,
+      "actor": "Planner",
+      "kind": "planning_started",
+      "framework": "RAI create_react_runnable",
+      "model": "deepseek-chat",
+      "plan": [
+        "approach",
+        "grasp",
+        "transport",
+        "verify"
+      ]
+    },
+    {
+      "timestamp": 1792575564.1723835,
+      "actor": "Planner",
+      "kind": "observation",
+      "observation": {
+        "timestamp": 1792575564.0784733,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "reset",
+        "steps": 2,
+        "cube_position": [
+          -0.0007484888192266226,
+          0.0536438450217247,
+          0.019999943673610687
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          0.012253533117473125,
+          0.0380113385617733,
+          0.18215224146842957
+        ],
+        "joint_positions": [
+          0.035281047224998474,
+          0.40070223808288574,
+          0.019574759528040886,
+          -1.918677568435669,
+          0.03735116124153137,
+          2.336648941040039,
+          0.8043999075889587,
+          0.03999999910593033,
+          0.03999999910593033
+        ],
+        "distance_to_goal": 0.27600574493408203,
+        "is_grasped": false,
+        "ever_grasped": false,
+        "is_robot_static": true,
+        "native_success": false,
+        "lift_height": -5.587935447692871e-08,
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+        "age_sec": 0.094,
+        "active_job": null,
+        "source": "/roboweave/arm/state"
+      }
+    },
+    {
+      "timestamp": 1792575565.176261,
+      "actor": "Executor",
+      "kind": "action_goal",
+      "skill": "approach",
+      "action": "/roboweave/arm/manipulate"
+    },
+    {
+      "timestamp": 1792575565.3354151,
+      "actor": "ROS2",
+      "kind": "action_feedback",
+      "skill": "approach",
+      "phase": "approach",
+      "tcp": [
+        0.012253533117473125,
+        0.0380113385617733,
+        0.18215224146842957
+      ],
+      "cube": [
+        -0.0007482660585083067,
+        0.05364349111914635,
+        0.019999952986836433
+      ],
+      "distance": 0.27600565552711487,
+      "is_grasped": false,
+      "steps": 5
+    },
+    {
+      "timestamp": 1792575565.788525,
+      "actor": "ROS2",
+      "kind": "action_feedback",
+      "skill": "approach",
+      "phase": "approach",
+      "tcp": [
+        0.01186919305473566,
+        0.039276719093322754,
+        0.17499655485153198
+      ],
+      "cube": [
+        -0.0007482765940949321,
+        0.053643494844436646,
+        0.01999993622303009
+      ],
+      "distance": 0.27600568532943726,
+      "is_grasped": false,
+      "steps": 14
+    },
+    {
+      "timestamp": 1792575566.242398,
+      "actor": "ROS2",
+      "kind": "action_feedback",
+      "skill": "approach",
+      "phase": "approach",
+      "tcp": [
+        0.0008841296657919884,
+        0.05223080888390541,
+        0.09651364386081696
+      ],
+      "cube": [
+        -0.0007482765940949321,
+        0.053643494844436646,
+        0.01999993622303009
+      ],
+      "distance": 0.27600568532943726,
+      "is_grasped": false,
+      "steps": 24
+    },
+    {
+      "timestamp": 1792575566.6967394,
+      "actor": "ROS2",
+      "kind": "action_feedback",
+      "skill": "approach",
+      "phase": "approach",
+      "tcp": [
+        -0.0024193618446588516,
+        0.05512537807226181,
+        0.06398728489875793
+      ],
+      "cube": [
+        -0.0007479957421310246,
+        0.05364265665411949,
+        0.019999900832772255
+      ],
+      "distance": 0.27600550651550293,
+      "is_grasped": false,
+      "steps": 35
+    },
+    {
+      "timestamp": 1792575567.1510983,
+      "actor": "Executor",
+      "kind": "action_result",
+      "skill": "approach",
+      "success": true,
+      "reason": "postcondition_passed",
+      "ros_status": 4,
+      "observation": {
+        "timestamp": 1792575567.072251,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "approach",
+        "steps": 43,
+        "cube_position": [
+          -0.0007478409097529948,
+          0.05364227667450905,
+          0.01999993808567524
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          -0.003364761359989643,
+          0.053715094923973083,
+          0.021917112171649933
+        ],
+        "joint_positions": [
+          0.03578045964241028,
+          0.6882758140563965,
+          0.05004507303237915,
+          -1.9341522455215454,
+          -0.06268310546875,
+          2.618149995803833,
+          0.5535558462142944,
+          0.039999958127737045,
+          0.03999995440244675
+        ],
+        "distance_to_goal": 0.2760053873062134,
+        "is_grasped": false,
+        "ever_grasped": false,
+        "is_robot_static": true,
+        "native_success": false,
+        "lift_height": -6.146728992462158e-08,
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+      },
+      "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+      "feedback_samples": 12
+    },
+    {
+      "timestamp": 1792575568.0719316,
+      "actor": "Executor",
+      "kind": "action_goal",
+      "skill": "grasp",
+      "action": "/roboweave/arm/manipulate"
+    },
+    {
+      "timestamp": 1792575568.2306752,
+      "actor": "ROS2",
+      "kind": "action_feedback",
+      "skill": "grasp",
+      "phase": "grasp",
+      "tcp": [
+        -0.003864089958369732,
+        0.05363989993929863,
+        0.021207429468631744
+      ],
+      "cube": [
+        -0.0007478392217308283,
+        0.05364227667450905,
+        0.019999897107481956
+      ],
+      "distance": 0.27600541710853577,
+      "is_grasped": false,
+      "steps": 45
+    },
+    {
+      "timestamp": 1792575568.684428,
+      "actor": "Executor",
+      "kind": "action_result",
+      "skill": "grasp",
+      "success": false,
+      "reason": "grasp_contact_missing",
+      "ros_status": 6,
+      "observation": {
+        "timestamp": 1792575568.6275291,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "grasp",
+        "steps": 55,
+        "cube_position": [
+          -0.0007476124446839094,
+          0.05364193022251129,
+          0.019999947398900986
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          -0.0033638011664152145,
+          0.05371527001261711,
+          0.02191871404647827
+        ],
+        "joint_positions": [
+          0.03578052297234535,
+          0.6882746815681458,
+          0.05004516616463661,
+          -1.9341479539871216,
+          -0.06268363445997238,
+          2.618142604827881,
+          0.5535545945167542,
+          0.03999992460012436,
+          0.039999932050704956
+        ],
+        "distance_to_goal": 0.27600526809692383,
+        "is_grasped": false,
+        "ever_grasped": false,
+        "is_robot_static": true,
+        "native_success": false,
+        "lift_height": -5.21540641784668e-08,
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+        "age_sec": 0.044,
+        "active_job": "0424864f28904230a459e0ca87235925"
+      },
+      "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+      "feedback_samples": 3
+    },
+    {
+      "timestamp": 1792575568.68474,
+      "actor": "Recovery",
+      "kind": "reobserve_reapproach_retry",
+      "max_retries": 1,
+      "observation": {
+        "timestamp": 1792575568.5993948,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "grasp",
+        "steps": 55,
+        "cube_position": [
+          -0.0007476124446839094,
+          0.05364193022251129,
+          0.019999947398900986
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          -0.0033638011664152145,
+          0.05371527001261711,
+          0.02191871404647827
+        ],
+        "joint_positions": [
+          0.03578052297234535,
+          0.6882746815681458,
+          0.05004516616463661,
+          -1.9341479539871216,
+          -0.06268363445997238,
+          2.618142604827881,
+          0.5535545945167542,
+          0.03999992460012436,
+          0.039999932050704956
+        ],
+        "distance_to_goal": 0.27600526809692383,
+        "is_grasped": false,
+        "ever_grasped": false,
+        "is_robot_static": true,
+        "native_success": false,
+        "lift_height": -5.21540641784668e-08,
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+        "age_sec": 0.085,
+        "active_job": "0424864f28904230a459e0ca87235925",
+        "source": "/roboweave/arm/state"
+      }
+    },
+    {
+      "timestamp": 1792575568.684886,
+      "actor": "Executor",
+      "kind": "action_goal",
+      "skill": "recover",
+      "action": "/roboweave/arm/manipulate"
+    },
+    {
+      "timestamp": 1792575568.8428247,
+      "actor": "ROS2",
+      "kind": "action_feedback",
+      "skill": "recover",
+      "phase": "recover",
+      "tcp": [
+        -0.0033638011664152145,
+        0.05371527001261711,
+        0.02191871404647827
+      ],
+      "cube": [
+        -0.0007476136088371277,
+        0.05364193767309189,
+        0.019999919459223747
+      ],
+      "distance": 0.2760052978992462,
+      "is_grasped": false,
+      "steps": 57
+    },
+    {
+      "timestamp": 1792575569.2971036,
+      "actor": "ROS2",
+      "kind": "action_feedback",
+      "skill": "recover",
+      "phase": "recover",
+      "tcp": [
+        -0.0038657179102301598,
+        0.05359865352511406,
+        0.030798248946666718
+      ],
+      "cube": [
+        -0.0007476092432625592,
+        0.05364192649722099,
+        0.019999919459223747
+      ],
+      "distance": 0.2760052978992462,
+      "is_grasped": false,
+      "steps": 67
+    },
+    {
+      "timestamp": 1792575569.750718,
+      "actor": "ROS2",
+      "kind": "action_feedback",
+      "skill": "recover",
+      "phase": "recover",
+      "tcp": [
+        -0.0009697014465928078,
+        0.05364286154508591,
+        0.07614359259605408
+      ],
+      "cube": [
+        -0.0007473715231753886,
+        0.053641341626644135,
+        0.019999941810965538
+      ],
+      "distance": 0.2760051190853119,
+      "is_grasped": false,
+      "steps": 77
+    },
+    {
+      "timestamp": 1792575570.2037196,
+      "actor": "ROS2",
+      "kind": "action_feedback",
+      "skill": "recover",
+      "phase": "recover",
+      "tcp": [
+        -0.002956022508442402,
+        0.05361171066761017,
+        0.028265364468097687
+      ],
+      "cube": [
+        -0.0007469580159522593,
+        0.05364035442471504,
+        0.019999956712126732
+      ],
+      "distance": 0.2760048806667328,
+      "is_grasped": false,
+      "steps": 87
+    },
+    {
+      "timestamp": 1792575570.3554695,
+      "actor": "Executor",
+      "kind": "action_result",
+      "skill": "recover",
+      "success": true,
+      "reason": "postcondition_passed",
+      "ros_status": 4,
+      "observation": {
+        "timestamp": 1792575570.2403429,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "recover",
+        "steps": 89,
+        "cube_position": [
+          -0.0007472108700312674,
+          0.05364072695374489,
+          0.019999906420707703
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          -0.003307351842522621,
+          0.053587108850479126,
+          0.021959662437438965
+        ],
+        "joint_positions": [
+          0.03529415652155876,
+          0.6882979869842529,
+          0.05034126713871956,
+          -1.9339375495910645,
+          -0.06361483037471771,
+          2.6178689002990723,
+          0.5535644888877869,
+          0.03999995067715645,
+          0.03999996557831764
+        ],
+        "distance_to_goal": 0.2760050296783447,
+        "is_grasped": false,
+        "ever_grasped": false,
+        "is_robot_static": true,
+        "native_success": false,
+        "lift_height": -9.313225746154785e-08,
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+      },
+      "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+      "feedback_samples": 10
+    },
+    {
+      "timestamp": 1792575570.3557842,
+      "actor": "Executor",
+      "kind": "action_goal",
+      "skill": "grasp",
+      "action": "/roboweave/arm/manipulate"
+    },
+    {
+      "timestamp": 1792575570.514655,
+      "actor": "ROS2",
+      "kind": "action_feedback",
+      "skill": "grasp",
+      "phase": "grasp",
+      "tcp": [
+        -0.003884299658238888,
+        0.05350936949253082,
+        0.021151669323444366
+      ],
+      "cube": [
+        -0.001258117612451315,
+        0.05468440428376198,
+        0.02016371302306652
+      ],
+      "distance": 0.2761092483997345,
+      "is_grasped": true,
+      "steps": 91
+    },
+    {
+      "timestamp": 1792575570.9694035,
+      "actor": "Executor",
+      "kind": "action_result",
+      "skill": "grasp",
+      "success": true,
+      "reason": "postcondition_passed",
+      "ros_status": 4,
+      "observation": {
+        "timestamp": 1792575570.9120867,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "grasp",
+        "steps": 101,
+        "cube_position": [
+          -0.0009479939471930265,
+          0.054763127118349075,
+          0.020636023953557014
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          -0.003575003705918789,
+          0.05358768254518509,
+          0.021621443331241608
+        ],
+        "joint_positions": [
+          0.03527031093835831,
+          0.6886976361274719,
+          0.050378892570734024,
+          -1.9341864585876465,
+          -0.06351158022880554,
+          2.617785930633545,
+          0.5535076260566711,
+          0.01830412447452545,
+          0.01827441342175007
+        ],
+        "distance_to_goal": 0.2756343185901642,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": false,
+        "lift_height": 0.0006360244005918503,
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+      },
+      "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+      "feedback_samples": 3
+    },
+    {
+      "timestamp": 1792575570.969646,
+      "actor": "Verifier",
+      "kind": "recovery_verified",
+      "success": true,
+      "observation": {
+        "timestamp": 1792575570.9120867,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "grasp",
+        "steps": 101,
+        "cube_position": [
+          -0.0009479939471930265,
+          0.054763127118349075,
+          0.020636023953557014
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          -0.003575003705918789,
+          0.05358768254518509,
+          0.021621443331241608
+        ],
+        "joint_positions": [
+          0.03527031093835831,
+          0.6886976361274719,
+          0.050378892570734024,
+          -1.9341864585876465,
+          -0.06351158022880554,
+          2.617785930633545,
+          0.5535076260566711,
+          0.01830412447452545,
+          0.01827441342175007
+        ],
+        "distance_to_goal": 0.2756343185901642,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": false,
+        "lift_height": 0.0006360244005918503,
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+      }
+    },
+    {
+      "timestamp": 1792575571.747018,
+      "actor": "Executor",
+      "kind": "action_goal",
+      "skill": "transport",
+      "action": "/roboweave/arm/manipulate"
+    },
+    {
+      "timestamp": 1792575572.0569556,
+      "actor": "ROS2",
+      "kind": "action_feedback",
+      "skill": "transport",
+      "phase": "transport",
+      "tcp": [
+        -0.004059704020619392,
+        0.05314688757061958,
+        0.02342425286769867
+      ],
+      "cube": [
+        -0.0014349021948873997,
+        0.05432318150997162,
+        0.022433938458561897
+      ],
+      "distance": 0.27384355664253235,
+      "is_grasped": true,
+      "steps": 105
+    },
+    {
+      "timestamp": 1792575572.5105054,
+      "actor": "ROS2",
+      "kind": "action_feedback",
+      "skill": "transport",
+      "phase": "transport",
+      "tcp": [
+        0.003821626305580139,
+        0.03380659967660904,
+        0.1163753792643547
+      ],
+      "cube": [
+        0.0064461189322173595,
+        0.034982047975063324,
+        0.11538591235876083
+      ],
+      "distance": 0.1786056011915207,
+      "is_grasped": true,
+      "steps": 116
+    },
+    {
+      "timestamp": 1792575572.9640148,
+      "actor": "ROS2",
+      "kind": "action_feedback",
+      "skill": "transport",
+      "phase": "transport",
+      "tcp": [
+        0.014512086287140846,
+        0.007608134765177965,
+        0.24387559294700623
+      ],
+      "cube": [
+        0.017143404111266136,
+        0.008780953474342823,
+        0.2428997904062271
+      ],
+      "distance": 0.04825431481003761,
+      "is_grasped": true,
+      "steps": 125
+    },
+    {
+      "timestamp": 1792575573.4176397,
+      "actor": "ROS2",
+      "kind": "action_feedback",
+      "skill": "transport",
+      "phase": "transport",
+      "tcp": [
+        0.01737462915480137,
+        -0.0016401957254856825,
+        0.2889220714569092
+      ],
+      "cube": [
+        0.02000570110976696,
+        -0.00046706970897503197,
+        0.2879445552825928
+      ],
+      "distance": 0.007046093232929707,
+      "is_grasped": true,
+      "steps": 135
+    },
+    {
+      "timestamp": 1792575573.8720975,
+      "actor": "Executor",
+      "kind": "action_result",
+      "skill": "transport",
+      "success": true,
+      "reason": "postcondition_passed",
+      "ros_status": 4,
+      "observation": {
+        "timestamp": 1792575573.7854345,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "transport",
+        "steps": 145,
+        "cube_position": [
+          0.019803280010819435,
+          -0.0002773866872303188,
+          0.28727373480796814
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          0.017173688858747482,
+          -0.0014513733331114054,
+          0.28825438022613525
+        ],
+        "joint_positions": [
+          -0.056415315717458725,
+          0.28825733065605164,
+          0.059105418622493744,
+          -1.7882672548294067,
+          -0.016653751954436302,
+          2.073269844055176,
+          0.431592732667923,
+          0.018318872898817062,
+          0.018277304247021675
+        ],
+        "distance_to_goal": 0.00740490248426795,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": true,
+        "lift_height": 0.267273735255003,
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+      },
+      "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+      "feedback_samples": 12
+    },
+    {
+      "timestamp": 1792575574.535971,
+      "actor": "Executor",
+      "kind": "action_goal",
+      "skill": "verify",
+      "action": "/roboweave/arm/manipulate"
+    },
+    {
+      "timestamp": 1792575574.6972787,
+      "actor": "Executor",
+      "kind": "action_result",
+      "skill": "verify",
+      "success": true,
+      "reason": "postcondition_passed",
+      "ros_status": 4,
+      "observation": {
+        "timestamp": 1792575574.544959,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "verify",
+        "steps": 145,
+        "cube_position": [
+          0.019803280010819435,
+          -0.0002773866872303188,
+          0.28727373480796814
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          0.017173688858747482,
+          -0.0014513733331114054,
+          0.28825438022613525
+        ],
+        "joint_positions": [
+          -0.056415315717458725,
+          0.28825733065605164,
+          0.059105418622493744,
+          -1.7882672548294067,
+          -0.016653751954436302,
+          2.073269844055176,
+          0.431592732667923,
+          0.018318872898817062,
+          0.018277304247021675
+        ],
+        "distance_to_goal": 0.00740490248426795,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": true,
+        "lift_height": 0.267273735255003,
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+      },
+      "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+      "feedback_samples": 0
+    },
+    {
+      "timestamp": 1792575575.9337866,
+      "actor": "Planner",
+      "kind": "agent_finished",
+      "answer": "在 ManiSkill 仿真中，我按接近、抓取、搬运、验证四个技能依次执行，全部通过仿真状态与运动规划判定成功。抓取阶段首次接触验证失败（initial_failure 为 grasp_contact_missing），内置恢复一次后成功（recovered 为 true，recovery_count 为 1），未手动重试。红色方块现被夹爪保持于目标附近，距绿色目标约 7.4 毫米，抬升约 0.267 米，仿真原生成功标志为真。本结果基于特权仿真状态与运动规划，而非视觉或真实硬件，且未执行释放放置。"
+    },
+    {
+      "timestamp": 1792575575.9339435,
+      "actor": "Verifier",
+      "kind": "final_postcondition",
+      "success": true,
+      "observation": {
+        "timestamp": 1792575575.850555,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "verify",
+        "steps": 145,
+        "cube_position": [
+          0.019803280010819435,
+          -0.0002773866872303188,
+          0.28727373480796814
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          0.017173688858747482,
+          -0.0014513733331114054,
+          0.28825438022613525
+        ],
+        "joint_positions": [
+          -0.056415315717458725,
+          0.28825733065605164,
+          0.059105418622493744,
+          -1.7882672548294067,
+          -0.016653751954436302,
+          2.073269844055176,
+          0.431592732667923,
+          0.018318872898817062,
+          0.018277304247021675
+        ],
+        "distance_to_goal": 0.00740490248426795,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": true,
+        "lift_height": 0.267273735255003,
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+        "age_sec": 0.083,
+        "active_job": null,
+        "source": "/roboweave/arm/state"
+      }
+    },
+    {
+      "timestamp": 1792575575.9340742,
+      "actor": "Runtime",
+      "kind": "task_finished",
+      "status": "succeeded"
+    }
+  ],
+  "busy": false,
+  "history": [
+    {
+      "id": "95f1b662185f42e48ce584de8c23a832",
+      "text": "抓取红色方块并移动到绿色目标，验证实际结果。如果抓取失败，使用有限恢复。",
+      "seed": 0,
+      "fault_injection": true,
+      "status": "succeeded",
+      "started_at": 1792575563.1584122,
+      "recoveries": 1,
+      "steps": [
+        {
+          "skill": "approach",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792575567.072251,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "approach",
+            "steps": 43,
+            "cube_position": [
+              -0.0007478409097529948,
+              0.05364227667450905,
+              0.01999993808567524
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.003364761359989643,
+              0.053715094923973083,
+              0.021917112171649933
+            ],
+            "joint_positions": [
+              0.03578045964241028,
+              0.6882758140563965,
+              0.05004507303237915,
+              -1.9341522455215454,
+              -0.06268310546875,
+              2.618149995803833,
+              0.5535558462142944,
+              0.039999958127737045,
+              0.03999995440244675
+            ],
+            "distance_to_goal": 0.2760053873062134,
+            "is_grasped": false,
+            "ever_grasped": false,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": -6.146728992462158e-08,
+            "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+          },
+          "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+          "feedback_samples": 12
+        },
+        {
+          "skill": "grasp",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792575570.9120867,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "grasp",
+            "steps": 101,
+            "cube_position": [
+              -0.0009479939471930265,
+              0.054763127118349075,
+              0.020636023953557014
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.003575003705918789,
+              0.05358768254518509,
+              0.021621443331241608
+            ],
+            "joint_positions": [
+              0.03527031093835831,
+              0.6886976361274719,
+              0.050378892570734024,
+              -1.9341864585876465,
+              -0.06351158022880554,
+              2.617785930633545,
+              0.5535076260566711,
+              0.01830412447452545,
+              0.01827441342175007
+            ],
+            "distance_to_goal": 0.2756343185901642,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": 0.0006360244005918503,
+            "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+          },
+          "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+          "feedback_samples": 3,
+          "recovered": true,
+          "recovery_count": 1,
+          "initial_failure": "grasp_contact_missing"
+        },
+        {
+          "skill": "transport",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792575573.7854345,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "transport",
+            "steps": 145,
+            "cube_position": [
+              0.019803280010819435,
+              -0.0002773866872303188,
+              0.28727373480796814
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.017173688858747482,
+              -0.0014513733331114054,
+              0.28825438022613525
+            ],
+            "joint_positions": [
+              -0.056415315717458725,
+              0.28825733065605164,
+              0.059105418622493744,
+              -1.7882672548294067,
+              -0.016653751954436302,
+              2.073269844055176,
+              0.431592732667923,
+              0.018318872898817062,
+              0.018277304247021675
+            ],
+            "distance_to_goal": 0.00740490248426795,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.267273735255003,
+            "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+          },
+          "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+          "feedback_samples": 12
+        },
+        {
+          "skill": "verify",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792575574.544959,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "verify",
+            "steps": 145,
+            "cube_position": [
+              0.019803280010819435,
+              -0.0002773866872303188,
+              0.28727373480796814
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.017173688858747482,
+              -0.0014513733331114054,
+              0.28825438022613525
+            ],
+            "joint_positions": [
+              -0.056415315717458725,
+              0.28825733065605164,
+              0.059105418622493744,
+              -1.7882672548294067,
+              -0.016653751954436302,
+              2.073269844055176,
+              0.431592732667923,
+              0.018318872898817062,
+              0.018277304247021675
+            ],
+            "distance_to_goal": 0.00740490248426795,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.267273735255003,
+            "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e"
+          },
+          "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+          "feedback_samples": 0
+        }
+      ],
+      "plan": [
+        "approach",
+        "grasp",
+        "transport",
+        "verify"
+      ],
+      "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+      "duration_sec": 12.78,
+      "final_observation": {
+        "timestamp": 1792575575.850555,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "verify",
+        "steps": 145,
+        "cube_position": [
+          0.019803280010819435,
+          -0.0002773866872303188,
+          0.28727373480796814
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          0.017173688858747482,
+          -0.0014513733331114054,
+          0.28825438022613525
+        ],
+        "joint_positions": [
+          -0.056415315717458725,
+          0.28825733065605164,
+          0.059105418622493744,
+          -1.7882672548294067,
+          -0.016653751954436302,
+          2.073269844055176,
+          0.431592732667923,
+          0.018318872898817062,
+          0.018277304247021675
+        ],
+        "distance_to_goal": 0.00740490248426795,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": true,
+        "lift_height": 0.267273735255003,
+        "trajectory_id": "7e59351bd0aa4155acf5585cfc70876e",
+        "age_sec": 0.084,
+        "active_job": null,
+        "source": "/roboweave/arm/state"
+      }
+    },
+    {
+      "id": "42b6aa1e26204558b5df0dbf191b52b7",
+      "text": "抓取红色方块，将它移动到绿色目标位置，并验证抓取和任务结果。",
+      "seed": 0,
+      "fault_injection": true,
+      "status": "succeeded",
+      "started_at": 1792575234.3072796,
+      "recoveries": 1,
+      "steps": [
+        {
+          "skill": "approach",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792575238.1830478,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "approach",
+            "steps": 43,
+            "cube_position": [
+              -0.0007478409097529948,
+              0.05364227667450905,
+              0.01999993808567524
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.003364761359989643,
+              0.053715094923973083,
+              0.021917112171649933
+            ],
+            "joint_positions": [
+              0.03578045964241028,
+              0.6882758140563965,
+              0.05004507303237915,
+              -1.9341522455215454,
+              -0.06268310546875,
+              2.618149995803833,
+              0.5535558462142944,
+              0.039999958127737045,
+              0.03999995440244675
+            ],
+            "distance_to_goal": 0.2760053873062134,
+            "is_grasped": false,
+            "ever_grasped": false,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": -6.146728992462158e-08,
+            "trajectory_id": "fff75358e1144825b23dc4bf9e0bc7a7"
+          },
+          "trajectory_id": "fff75358e1144825b23dc4bf9e0bc7a7",
+          "feedback_samples": 11
+        },
+        {
+          "skill": "grasp",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792575242.4441845,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "grasp",
+            "steps": 101,
+            "cube_position": [
+              -0.0009479939471930265,
+              0.054763127118349075,
+              0.020636023953557014
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.003575003705918789,
+              0.05358768254518509,
+              0.021621443331241608
+            ],
+            "joint_positions": [
+              0.03527031093835831,
+              0.6886976361274719,
+              0.050378892570734024,
+              -1.9341864585876465,
+              -0.06351158022880554,
+              2.617785930633545,
+              0.5535076260566711,
+              0.01830412447452545,
+              0.01827441342175007
+            ],
+            "distance_to_goal": 0.2756343185901642,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": 0.0006360244005918503,
+            "trajectory_id": "fff75358e1144825b23dc4bf9e0bc7a7"
+          },
+          "trajectory_id": "fff75358e1144825b23dc4bf9e0bc7a7",
+          "feedback_samples": 2,
+          "recovered": true,
+          "recovery_count": 1,
+          "initial_failure": "grasp_contact_missing"
+        },
+        {
+          "skill": "transport",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792575245.5429766,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "transport",
+            "steps": 145,
+            "cube_position": [
+              0.019803280010819435,
+              -0.0002773866872303188,
+              0.28727373480796814
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.017173688858747482,
+              -0.0014513733331114054,
+              0.28825438022613525
+            ],
+            "joint_positions": [
+              -0.056415315717458725,
+              0.28825733065605164,
+              0.059105418622493744,
+              -1.7882672548294067,
+              -0.016653751954436302,
+              2.073269844055176,
+              0.431592732667923,
+              0.018318872898817062,
+              0.018277304247021675
+            ],
+            "distance_to_goal": 0.00740490248426795,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.267273735255003,
+            "trajectory_id": "fff75358e1144825b23dc4bf9e0bc7a7"
+          },
+          "trajectory_id": "fff75358e1144825b23dc4bf9e0bc7a7",
+          "feedback_samples": 13
+        },
+        {
+          "skill": "verify",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792575246.6074686,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "verify",
+            "steps": 145,
+            "cube_position": [
+              0.019803280010819435,
+              -0.0002773866872303188,
+              0.28727373480796814
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.017173688858747482,
+              -0.0014513733331114054,
+              0.28825438022613525
+            ],
+            "joint_positions": [
+              -0.056415315717458725,
+              0.28825733065605164,
+              0.059105418622493744,
+              -1.7882672548294067,
+              -0.016653751954436302,
+              2.073269844055176,
+              0.431592732667923,
+              0.018318872898817062,
+              0.018277304247021675
+            ],
+            "distance_to_goal": 0.00740490248426795,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.267273735255003,
+            "trajectory_id": "fff75358e1144825b23dc4bf9e0bc7a7"
+          },
+          "trajectory_id": "fff75358e1144825b23dc4bf9e0bc7a7",
+          "feedback_samples": 0
+        }
+      ],
+      "plan": [
+        "approach",
+        "grasp",
+        "transport",
+        "verify"
+      ],
+      "trajectory_id": "fff75358e1144825b23dc4bf9e0bc7a7",
+      "duration_sec": 13.73,
+      "final_observation": {
+        "timestamp": 1792575247.913661,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "verify",
+        "steps": 145,
+        "cube_position": [
+          0.019803280010819435,
+          -0.0002773866872303188,
+          0.28727373480796814
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          0.017173688858747482,
+          -0.0014513733331114054,
+          0.28825438022613525
+        ],
+        "joint_positions": [
+          -0.056415315717458725,
+          0.28825733065605164,
+          0.059105418622493744,
+          -1.7882672548294067,
+          -0.016653751954436302,
+          2.073269844055176,
+          0.431592732667923,
+          0.018318872898817062,
+          0.018277304247021675
+        ],
+        "distance_to_goal": 0.00740490248426795,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": true,
+        "lift_height": 0.267273735255003,
+        "trajectory_id": "fff75358e1144825b23dc4bf9e0bc7a7",
+        "age_sec": 0.125,
+        "active_job": null,
+        "source": "/roboweave/arm/state"
+      }
+    },
+    {
+      "id": "90136d98d77940adb6eef49674ee9c3a",
+      "text": "抓取红色方块并移动到绿色目标，验证实际结果。如果抓取失败，使用有限恢复。",
+      "seed": 0,
+      "fault_injection": true,
+      "status": "succeeded",
+      "started_at": 1792574999.2915967,
+      "recoveries": 1,
+      "steps": [
+        {
+          "skill": "approach",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792575003.2280126,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "approach",
+            "steps": 43,
+            "cube_position": [
+              -0.0007478409097529948,
+              0.05364227667450905,
+              0.01999993808567524
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.003364761359989643,
+              0.053715094923973083,
+              0.021917112171649933
+            ],
+            "joint_positions": [
+              0.03578045964241028,
+              0.6882758140563965,
+              0.05004507303237915,
+              -1.9341522455215454,
+              -0.06268310546875,
+              2.618149995803833,
+              0.5535558462142944,
+              0.039999958127737045,
+              0.03999995440244675
+            ],
+            "distance_to_goal": 0.2760053873062134,
+            "is_grasped": false,
+            "ever_grasped": false,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": -6.146728992462158e-08,
+            "trajectory_id": "ff1c9c80def24ec0881fe31d30b0cd88"
+          },
+          "trajectory_id": "ff1c9c80def24ec0881fe31d30b0cd88",
+          "feedback_samples": 12
+        },
+        {
+          "skill": "grasp",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792575006.976746,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "grasp",
+            "steps": 101,
+            "cube_position": [
+              -0.0009479939471930265,
+              0.054763127118349075,
+              0.020636023953557014
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.003575003705918789,
+              0.05358768254518509,
+              0.021621443331241608
+            ],
+            "joint_positions": [
+              0.03527031093835831,
+              0.6886976361274719,
+              0.050378892570734024,
+              -1.9341864585876465,
+              -0.06351158022880554,
+              2.617785930633545,
+              0.5535076260566711,
+              0.01830412447452545,
+              0.01827441342175007
+            ],
+            "distance_to_goal": 0.2756343185901642,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": 0.0006360244005918503,
+            "trajectory_id": "ff1c9c80def24ec0881fe31d30b0cd88"
+          },
+          "trajectory_id": "ff1c9c80def24ec0881fe31d30b0cd88",
+          "feedback_samples": 3,
+          "recovered": true,
+          "recovery_count": 1,
+          "initial_failure": "grasp_contact_missing"
+        },
+        {
+          "skill": "transport",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792575010.099371,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "transport",
+            "steps": 145,
+            "cube_position": [
+              0.019803280010819435,
+              -0.0002773866872303188,
+              0.28727373480796814
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.017173688858747482,
+              -0.0014513733331114054,
+              0.28825438022613525
+            ],
+            "joint_positions": [
+              -0.056415315717458725,
+              0.28825733065605164,
+              0.059105418622493744,
+              -1.7882672548294067,
+              -0.016653751954436302,
+              2.073269844055176,
+              0.431592732667923,
+              0.018318872898817062,
+              0.018277304247021675
+            ],
+            "distance_to_goal": 0.00740490248426795,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.267273735255003,
+            "trajectory_id": "ff1c9c80def24ec0881fe31d30b0cd88"
+          },
+          "trajectory_id": "ff1c9c80def24ec0881fe31d30b0cd88",
+          "feedback_samples": 12
+        },
+        {
+          "skill": "verify",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792575011.1385152,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "verify",
+            "steps": 145,
+            "cube_position": [
+              0.019803280010819435,
+              -0.0002773866872303188,
+              0.28727373480796814
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.017173688858747482,
+              -0.0014513733331114054,
+              0.28825438022613525
+            ],
+            "joint_positions": [
+              -0.056415315717458725,
+              0.28825733065605164,
+              0.059105418622493744,
+              -1.7882672548294067,
+              -0.016653751954436302,
+              2.073269844055176,
+              0.431592732667923,
+              0.018318872898817062,
+              0.018277304247021675
+            ],
+            "distance_to_goal": 0.00740490248426795,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.267273735255003,
+            "trajectory_id": "ff1c9c80def24ec0881fe31d30b0cd88"
+          },
+          "trajectory_id": "ff1c9c80def24ec0881fe31d30b0cd88",
+          "feedback_samples": 0
+        }
+      ],
+      "plan": [
+        "approach",
+        "grasp",
+        "transport",
+        "verify"
+      ],
+      "trajectory_id": "ff1c9c80def24ec0881fe31d30b0cd88",
+      "duration_sec": 13.03,
+      "final_observation": {
+        "timestamp": 1792575011.9408898,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "verify",
+        "steps": 145,
+        "cube_position": [
+          0.019803280010819435,
+          -0.0002773866872303188,
+          0.28727373480796814
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          0.017173688858747482,
+          -0.0014513733331114054,
+          0.28825438022613525
+        ],
+        "joint_positions": [
+          -0.056415315717458725,
+          0.28825733065605164,
+          0.059105418622493744,
+          -1.7882672548294067,
+          -0.016653751954436302,
+          2.073269844055176,
+          0.431592732667923,
+          0.018318872898817062,
+          0.018277304247021675
+        ],
+        "distance_to_goal": 0.00740490248426795,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": true,
+        "lift_height": 0.267273735255003,
+        "trajectory_id": "ff1c9c80def24ec0881fe31d30b0cd88",
+        "age_sec": 0.384,
+        "active_job": null,
+        "source": "/roboweave/arm/state"
+      }
+    },
+    {
+      "id": "ef95b95d34894746b23ac5aab719ead8",
+      "text": "Pick up the red cube, move it to the green goal, and verify the result.",
+      "seed": 1,
+      "fault_injection": false,
+      "status": "succeeded",
+      "started_at": 1792574890.260569,
+      "recoveries": 0,
+      "steps": [
+        {
+          "skill": "approach",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574894.391759,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "approach",
+            "steps": 48,
+            "cube_position": [
+              0.051524773240089417,
+              -0.044139061123132706,
+              0.019999930635094643
+            ],
+            "goal_position": [
+              0.059971727430820465,
+              -0.02057252824306488,
+              0.24631159007549286
+            ],
+            "tcp_position": [
+              0.04894612357020378,
+              -0.0451054647564888,
+              0.01995433121919632
+            ],
+            "joint_positions": [
+              -0.07024529576301575,
+              0.8066089749336243,
+              0.002757734153419733,
+              -1.7038967609405518,
+              -0.0052971248514950275,
+              2.506119728088379,
+              0.539031982421875,
+              0.03999993950128555,
+              0.039999980479478836
+            ],
+            "distance_to_goal": 0.227692112326622,
+            "is_grasped": false,
+            "ever_grasped": false,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": -6.891787052154541e-08,
+            "trajectory_id": "2fd7e425155b477c92a6c24826182950"
+          },
+          "trajectory_id": "2fd7e425155b477c92a6c24826182950",
+          "feedback_samples": 14
+        },
+        {
+          "skill": "grasp",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574895.9412832,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "grasp",
+            "steps": 60,
+            "cube_position": [
+              0.05170954018831253,
+              -0.04432762414216995,
+              0.02043222263455391
+            ],
+            "goal_position": [
+              0.059971727430820465,
+              -0.02057252824306488,
+              0.24631159007549286
+            ],
+            "tcp_position": [
+              0.04866526275873184,
+              -0.04505596682429314,
+              0.019553035497665405
+            ],
+            "joint_positions": [
+              -0.0702655166387558,
+              0.8070457577705383,
+              0.002810420235618949,
+              -1.7041680812835693,
+              -0.005171660333871841,
+              2.5060315132141113,
+              0.5389582514762878,
+              0.01830526441335678,
+              0.018272744491696358
+            ],
+            "distance_to_goal": 0.2272752970457077,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": 0.0004322230815887451,
+            "trajectory_id": "2fd7e425155b477c92a6c24826182950"
+          },
+          "trajectory_id": "2fd7e425155b477c92a6c24826182950",
+          "feedback_samples": 3
+        },
+        {
+          "skill": "transport",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574898.3445606,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "transport",
+            "steps": 101,
+            "cube_position": [
+              0.055369213223457336,
+              -0.01945328526198864,
+              0.24502286314964294
+            ],
+            "goal_position": [
+              0.059971727430820465,
+              -0.02057252824306488,
+              0.24631159007549286
+            ],
+            "tcp_position": [
+              0.052325256168842316,
+              -0.020178591832518578,
+              0.24413985013961792
+            ],
+            "joint_positions": [
+              -0.03889670968055725,
+              0.44065725803375244,
+              0.010277383029460907,
+              -1.6757441759109497,
+              -0.005992731545120478,
+              2.1124258041381836,
+              0.5761191248893738,
+              0.018316173925995827,
+              0.018274888396263123
+            ],
+            "distance_to_goal": 0.004908835049718618,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.22502286359667778,
+            "trajectory_id": "2fd7e425155b477c92a6c24826182950"
+          },
+          "trajectory_id": "2fd7e425155b477c92a6c24826182950",
+          "feedback_samples": 12
+        },
+        {
+          "skill": "verify",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574899.4045784,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "verify",
+            "steps": 101,
+            "cube_position": [
+              0.055369213223457336,
+              -0.01945328526198864,
+              0.24502286314964294
+            ],
+            "goal_position": [
+              0.059971727430820465,
+              -0.02057252824306488,
+              0.24631159007549286
+            ],
+            "tcp_position": [
+              0.052325256168842316,
+              -0.020178591832518578,
+              0.24413985013961792
+            ],
+            "joint_positions": [
+              -0.03889670968055725,
+              0.44065725803375244,
+              0.010277383029460907,
+              -1.6757441759109497,
+              -0.005992731545120478,
+              2.1124258041381836,
+              0.5761191248893738,
+              0.018316173925995827,
+              0.018274888396263123
+            ],
+            "distance_to_goal": 0.004908835049718618,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.22502286359667778,
+            "trajectory_id": "2fd7e425155b477c92a6c24826182950"
+          },
+          "trajectory_id": "2fd7e425155b477c92a6c24826182950",
+          "feedback_samples": 0
+        }
+      ],
+      "plan": [
+        "approach",
+        "grasp",
+        "transport",
+        "verify"
+      ],
+      "trajectory_id": "2fd7e425155b477c92a6c24826182950",
+      "duration_sec": 10.78,
+      "final_observation": {
+        "timestamp": 1792574900.961142,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "verify",
+        "steps": 101,
+        "cube_position": [
+          0.055369213223457336,
+          -0.01945328526198864,
+          0.24502286314964294
+        ],
+        "goal_position": [
+          0.059971727430820465,
+          -0.02057252824306488,
+          0.24631159007549286
+        ],
+        "tcp_position": [
+          0.052325256168842316,
+          -0.020178591832518578,
+          0.24413985013961792
+        ],
+        "joint_positions": [
+          -0.03889670968055725,
+          0.44065725803375244,
+          0.010277383029460907,
+          -1.6757441759109497,
+          -0.005992731545120478,
+          2.1124258041381836,
+          0.5761191248893738,
+          0.018316173925995827,
+          0.018274888396263123
+        ],
+        "distance_to_goal": 0.004908835049718618,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": true,
+        "lift_height": 0.22502286359667778,
+        "trajectory_id": "2fd7e425155b477c92a6c24826182950",
+        "age_sec": 0.077,
+        "active_job": null,
+        "source": "/roboweave/arm/state"
+      }
+    },
+    {
+      "id": "c7c21bfeec4144ed9a1a76691a38084a",
+      "text": "Pick up the red cube, move it to the green goal, and verify the result.",
+      "seed": 0,
+      "fault_injection": false,
+      "status": "succeeded",
+      "started_at": 1792574879.1015084,
+      "recoveries": 0,
+      "steps": [
+        {
+          "skill": "approach",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574882.9508047,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "approach",
+            "steps": 43,
+            "cube_position": [
+              -0.0007478409097529948,
+              0.05364227667450905,
+              0.01999993808567524
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.003364761359989643,
+              0.053715094923973083,
+              0.021917112171649933
+            ],
+            "joint_positions": [
+              0.03578045964241028,
+              0.6882758140563965,
+              0.05004507303237915,
+              -1.9341522455215454,
+              -0.06268310546875,
+              2.618149995803833,
+              0.5535558462142944,
+              0.039999958127737045,
+              0.03999995440244675
+            ],
+            "distance_to_goal": 0.2760053873062134,
+            "is_grasped": false,
+            "ever_grasped": false,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": -6.146728992462158e-08,
+            "trajectory_id": "cac602001a2c4f4fa88be434504f51b8"
+          },
+          "trajectory_id": "cac602001a2c4f4fa88be434504f51b8",
+          "feedback_samples": 12
+        },
+        {
+          "skill": "grasp",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574884.2834084,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "grasp",
+            "steps": 55,
+            "cube_position": [
+              -0.0008527449099346995,
+              0.05455368384718895,
+              0.020551737397909164
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.003632219508290291,
+              0.05371605232357979,
+              0.021579012274742126
+            ],
+            "joint_positions": [
+              0.035756997764110565,
+              0.6886757016181946,
+              0.05008309334516525,
+              -1.9343994855880737,
+              -0.06258049607276917,
+              2.618065118789673,
+              0.5534980297088623,
+              0.01830388978123665,
+              0.01827423647046089
+            ],
+            "distance_to_goal": 0.27566373348236084,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": 0.0005517378449440002,
+            "trajectory_id": "cac602001a2c4f4fa88be434504f51b8"
+          },
+          "trajectory_id": "cac602001a2c4f4fa88be434504f51b8",
+          "feedback_samples": 3
+        },
+        {
+          "skill": "transport",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574887.255029,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "transport",
+            "steps": 99,
+            "cube_position": [
+              0.019951583817601204,
+              -0.0006194275920279324,
+              0.28722360730171204
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.017169807106256485,
+              -0.0014568702317774296,
+              0.2882463335990906
+            ],
+            "joint_positions": [
+              -0.0559413842856884,
+              0.28822535276412964,
+              0.05849189683794975,
+              -1.7883304357528687,
+              -0.016131579875946045,
+              2.073347568511963,
+              0.4317750334739685,
+              0.018318654969334602,
+              0.01827714592218399
+            ],
+            "distance_to_goal": 0.007203811313956976,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.26722360774874687,
+            "trajectory_id": "cac602001a2c4f4fa88be434504f51b8"
+          },
+          "trajectory_id": "cac602001a2c4f4fa88be434504f51b8",
+          "feedback_samples": 13
+        },
+        {
+          "skill": "verify",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574888.157333,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "verify",
+            "steps": 99,
+            "cube_position": [
+              0.019951583817601204,
+              -0.0006194275920279324,
+              0.28722360730171204
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.017169807106256485,
+              -0.0014568702317774296,
+              0.2882463335990906
+            ],
+            "joint_positions": [
+              -0.0559413842856884,
+              0.28822535276412964,
+              0.05849189683794975,
+              -1.7883304357528687,
+              -0.016131579875946045,
+              2.073347568511963,
+              0.4317750334739685,
+              0.018318654969334602,
+              0.01827714592218399
+            ],
+            "distance_to_goal": 0.007203811313956976,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.26722360774874687,
+            "trajectory_id": "cac602001a2c4f4fa88be434504f51b8"
+          },
+          "trajectory_id": "cac602001a2c4f4fa88be434504f51b8",
+          "feedback_samples": 0
+        }
+      ],
+      "plan": [
+        "approach",
+        "grasp",
+        "transport",
+        "verify"
+      ],
+      "trajectory_id": "cac602001a2c4f4fa88be434504f51b8",
+      "duration_sec": 10.48,
+      "final_observation": {
+        "timestamp": 1792574889.462709,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "verify",
+        "steps": 99,
+        "cube_position": [
+          0.019951583817601204,
+          -0.0006194275920279324,
+          0.28722360730171204
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          0.017169807106256485,
+          -0.0014568702317774296,
+          0.2882463335990906
+        ],
+        "joint_positions": [
+          -0.0559413842856884,
+          0.28822535276412964,
+          0.05849189683794975,
+          -1.7883304357528687,
+          -0.016131579875946045,
+          2.073347568511963,
+          0.4317750334739685,
+          0.018318654969334602,
+          0.01827714592218399
+        ],
+        "distance_to_goal": 0.007203811313956976,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": true,
+        "lift_height": 0.26722360774874687,
+        "trajectory_id": "cac602001a2c4f4fa88be434504f51b8",
+        "age_sec": 0.116,
+        "active_job": null,
+        "source": "/roboweave/arm/state"
+      }
+    },
+    {
+      "id": "41fee119096e4e59b60a42047a3ee20c",
+      "text": "抓取红色方块，将它移动到绿色目标位置，并验证抓取和任务结果。",
+      "seed": 0,
+      "fault_injection": false,
+      "status": "stopped",
+      "started_at": 1792574157.4050567,
+      "recoveries": 0,
+      "steps": [],
+      "plan": [
+        "approach",
+        "grasp",
+        "transport",
+        "verify"
+      ],
+      "trajectory_id": "7437232d0e514645acd3a36aecb9d5cc",
+      "reason": "native_verification_or_plan_incomplete",
+      "duration_sec": 3.52,
+      "final_observation": {
+        "timestamp": 1792574160.7543697,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "reset",
+        "steps": 0,
+        "cube_position": [
+          -0.0007486790418624878,
+          0.053644366562366486,
+          0.019999999552965164
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          0.012253533117473125,
+          0.0380113385617733,
+          0.18215224146842957
+        ],
+        "joint_positions": [
+          0.035281047224998474,
+          0.40070223808288574,
+          0.019574759528040886,
+          -1.918677568435669,
+          0.03735116124153137,
+          2.336648941040039,
+          0.8043999075889587,
+          0.03999999910593033,
+          0.03999999910593033
+        ],
+        "distance_to_goal": 0.2760058343410492,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": false,
+        "lift_height": 0.0,
+        "trajectory_id": "7437232d0e514645acd3a36aecb9d5cc",
+        "age_sec": 0.172,
+        "active_job": null,
+        "source": "/roboweave/arm/state"
+      }
+    },
+    {
+      "id": "ebfb8d2dd7d640068aadfeb27a865ab9",
+      "text": "抓取红色方块，将它移动到绿色目标位置，并验证抓取和任务结果。",
+      "seed": 0,
+      "fault_injection": false,
+      "status": "succeeded",
+      "started_at": 1792574136.103614,
+      "recoveries": 0,
+      "steps": [
+        {
+          "skill": "approach",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574139.6140363,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "approach",
+            "steps": 41,
+            "cube_position": [
+              -0.0007478409097529948,
+              0.05364227667450905,
+              0.01999993808567524
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.0033646924421191216,
+              0.053715307265520096,
+              0.021917179226875305
+            ],
+            "joint_positions": [
+              0.035780489444732666,
+              0.6882758736610413,
+              0.050045035779476166,
+              -1.9341522455215454,
+              -0.06268305331468582,
+              2.618149995803833,
+              0.5535562038421631,
+              0.039999958127737045,
+              0.03999995440244675
+            ],
+            "distance_to_goal": 0.2760053873062134,
+            "is_grasped": false,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": -6.146728992462158e-08,
+            "trajectory_id": "cf5c7e4e5266478b88fa12a103977672"
+          },
+          "trajectory_id": "cf5c7e4e5266478b88fa12a103977672",
+          "feedback_samples": 12
+        },
+        {
+          "skill": "grasp",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574141.050978,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "grasp",
+            "steps": 53,
+            "cube_position": [
+              -0.0008528664475306869,
+              0.054553791880607605,
+              0.020551856607198715
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.0036322474479675293,
+              0.053716208785772324,
+              0.021578945219516754
+            ],
+            "joint_positions": [
+              0.03575703874230385,
+              0.6886758208274841,
+              0.05008306726813316,
+              -1.9343994855880737,
+              -0.06258045881986618,
+              2.618065118789673,
+              0.5534984469413757,
+              0.018303895369172096,
+              0.018274245783686638
+            ],
+            "distance_to_goal": 0.27566367387771606,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": 0.000551857054233551,
+            "trajectory_id": "cf5c7e4e5266478b88fa12a103977672"
+          },
+          "trajectory_id": "cf5c7e4e5266478b88fa12a103977672",
+          "feedback_samples": 2
+        },
+        {
+          "skill": "transport",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574143.9180524,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "transport",
+            "steps": 97,
+            "cube_position": [
+              0.01995118148624897,
+              -0.0006195348687469959,
+              0.28722336888313293
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.01716962456703186,
+              -0.0014568674378097057,
+              0.28824615478515625
+            ],
+            "joint_positions": [
+              -0.05594132840633392,
+              0.28822553157806396,
+              0.05849185585975647,
+              -1.7883306741714478,
+              -0.016131598502397537,
+              2.0733470916748047,
+              0.4317754805088043,
+              0.018318654969334602,
+              0.018277151510119438
+            ],
+            "distance_to_goal": 0.00720423087477684,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.26722336933016777,
+            "trajectory_id": "cf5c7e4e5266478b88fa12a103977672"
+          },
+          "trajectory_id": "cf5c7e4e5266478b88fa12a103977672",
+          "feedback_samples": 12
+        },
+        {
+          "skill": "verify",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574144.5472353,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "verify",
+            "steps": 97,
+            "cube_position": [
+              0.01995118148624897,
+              -0.0006195348687469959,
+              0.28722336888313293
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.01716962456703186,
+              -0.0014568674378097057,
+              0.28824615478515625
+            ],
+            "joint_positions": [
+              -0.05594132840633392,
+              0.28822553157806396,
+              0.05849185585975647,
+              -1.7883306741714478,
+              -0.016131598502397537,
+              2.0733470916748047,
+              0.4317754805088043,
+              0.018318654969334602,
+              0.018277151510119438
+            ],
+            "distance_to_goal": 0.00720423087477684,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.26722336933016777,
+            "trajectory_id": "cf5c7e4e5266478b88fa12a103977672"
+          },
+          "trajectory_id": "cf5c7e4e5266478b88fa12a103977672",
+          "feedback_samples": 0
+        }
+      ],
+      "plan": [
+        "approach",
+        "grasp",
+        "transport",
+        "verify"
+      ],
+      "trajectory_id": "cf5c7e4e5266478b88fa12a103977672",
+      "duration_sec": 10.03,
+      "final_observation": {
+        "timestamp": 1792574146.1060205,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "verify",
+        "steps": 97,
+        "cube_position": [
+          0.01995118148624897,
+          -0.0006195348687469959,
+          0.28722336888313293
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          0.01716962456703186,
+          -0.0014568674378097057,
+          0.28824615478515625
+        ],
+        "joint_positions": [
+          -0.05594132840633392,
+          0.28822553157806396,
+          0.05849185585975647,
+          -1.7883306741714478,
+          -0.016131598502397537,
+          2.0733470916748047,
+          0.4317754805088043,
+          0.018318654969334602,
+          0.018277151510119438
+        ],
+        "distance_to_goal": 0.00720423087477684,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": true,
+        "lift_height": 0.26722336933016777,
+        "trajectory_id": "cf5c7e4e5266478b88fa12a103977672",
+        "age_sec": 0.031,
+        "active_job": null,
+        "source": "/roboweave/arm/state"
+      }
+    },
+    {
+      "id": "5b7a9a553f534666ab6ee7de09f708d3",
+      "text": "抓取红色方块并移动到绿色目标，验证实际结果。如果抓取失败，使用有限恢复。",
+      "seed": 0,
+      "fault_injection": true,
+      "status": "succeeded",
+      "started_at": 1792574051.2228348,
+      "recoveries": 1,
+      "steps": [
+        {
+          "skill": "approach",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574054.9296148,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "approach",
+            "steps": 41,
+            "cube_position": [
+              -0.0007478409097529948,
+              0.05364227667450905,
+              0.01999993808567524
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.0033646924421191216,
+              0.053715307265520096,
+              0.021917179226875305
+            ],
+            "joint_positions": [
+              0.035780489444732666,
+              0.6882758736610413,
+              0.050045035779476166,
+              -1.9341522455215454,
+              -0.06268305331468582,
+              2.618149995803833,
+              0.5535562038421631,
+              0.039999958127737045,
+              0.03999995440244675
+            ],
+            "distance_to_goal": 0.2760053873062134,
+            "is_grasped": false,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": -6.146728992462158e-08,
+            "trajectory_id": "a81461106cd240748713d3e61ebbe71b"
+          },
+          "trajectory_id": "a81461106cd240748713d3e61ebbe71b",
+          "feedback_samples": 12
+        },
+        {
+          "skill": "grasp",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574058.619787,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "grasp",
+            "steps": 99,
+            "cube_position": [
+              -0.0009479879518039525,
+              0.05476296320557594,
+              0.020635932683944702
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.0035751285031437874,
+              0.053587328642606735,
+              0.02162141352891922
+            ],
+            "joint_positions": [
+              0.03526993468403816,
+              0.6886976957321167,
+              0.05037883296608925,
+              -1.934186339378357,
+              -0.06351147592067719,
+              2.6177854537963867,
+              0.5535075068473816,
+              0.0183041300624609,
+              0.018274415284395218
+            ],
+            "distance_to_goal": 0.2756343483924866,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": 0.000635933130979538,
+            "trajectory_id": "a81461106cd240748713d3e61ebbe71b"
+          },
+          "trajectory_id": "a81461106cd240748713d3e61ebbe71b",
+          "feedback_samples": 3,
+          "recovered": true,
+          "recovery_count": 1,
+          "initial_failure": "grasp_contact_missing"
+        },
+        {
+          "skill": "transport",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574061.475214,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "transport",
+            "steps": 143,
+            "cube_position": [
+              0.01980324648320675,
+              -0.00027717731427401304,
+              0.28727370500564575
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.017173491418361664,
+              -0.0014512136112898588,
+              0.2882542014122009
+            ],
+            "joint_positions": [
+              -0.05641496554017067,
+              0.2882574796676636,
+              0.059105440974235535,
+              -1.7882674932479858,
+              -0.01665382832288742,
+              2.0732693672180176,
+              0.43159356713294983,
+              0.018318872898817062,
+              0.018277302384376526
+            ],
+            "distance_to_goal": 0.007404989097267389,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.2672737054526806,
+            "trajectory_id": "a81461106cd240748713d3e61ebbe71b"
+          },
+          "trajectory_id": "a81461106cd240748713d3e61ebbe71b",
+          "feedback_samples": 13
+        },
+        {
+          "skill": "verify",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792574062.5715399,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "verify",
+            "steps": 143,
+            "cube_position": [
+              0.01980324648320675,
+              -0.00027717731427401304,
+              0.28727370500564575
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.017173491418361664,
+              -0.0014512136112898588,
+              0.2882542014122009
+            ],
+            "joint_positions": [
+              -0.05641496554017067,
+              0.2882574796676636,
+              0.059105440974235535,
+              -1.7882674932479858,
+              -0.01665382832288742,
+              2.0732693672180176,
+              0.43159356713294983,
+              0.018318872898817062,
+              0.018277302384376526
+            ],
+            "distance_to_goal": 0.007404989097267389,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.2672737054526806,
+            "trajectory_id": "a81461106cd240748713d3e61ebbe71b"
+          },
+          "trajectory_id": "a81461106cd240748713d3e61ebbe71b",
+          "feedback_samples": 0
+        }
+      ],
+      "plan": [
+        "approach",
+        "grasp",
+        "transport",
+        "verify"
+      ],
+      "trajectory_id": "a81461106cd240748713d3e61ebbe71b",
+      "duration_sec": 12.86,
+      "final_observation": {
+        "timestamp": 1792574063.878569,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "verify",
+        "steps": 143,
+        "cube_position": [
+          0.01980324648320675,
+          -0.00027717731427401304,
+          0.28727370500564575
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          0.017173491418361664,
+          -0.0014512136112898588,
+          0.2882542014122009
+        ],
+        "joint_positions": [
+          -0.05641496554017067,
+          0.2882574796676636,
+          0.059105440974235535,
+          -1.7882674932479858,
+          -0.01665382832288742,
+          2.0732693672180176,
+          0.43159356713294983,
+          0.018318872898817062,
+          0.018277302384376526
+        ],
+        "distance_to_goal": 0.007404989097267389,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": true,
+        "lift_height": 0.2672737054526806,
+        "trajectory_id": "a81461106cd240748713d3e61ebbe71b",
+        "age_sec": 0.206,
+        "active_job": null,
+        "source": "/roboweave/arm/state"
+      }
+    },
+    {
+      "id": "53c2fa5fc2444f9caae7e802c6b907a5",
+      "text": "Pick up the red cube, move it to the green goal, and verify the result.",
+      "seed": 1,
+      "fault_injection": false,
+      "status": "succeeded",
+      "started_at": 1792573970.052185,
+      "recoveries": 0,
+      "steps": [
+        {
+          "skill": "approach",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792573974.3638442,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "approach",
+            "steps": 46,
+            "cube_position": [
+              0.051524773240089417,
+              -0.044139061123132706,
+              0.019999930635094643
+            ],
+            "goal_position": [
+              0.059971727430820465,
+              -0.02057252824306488,
+              0.24631159007549286
+            ],
+            "tcp_position": [
+              0.04894600808620453,
+              -0.0451052188873291,
+              0.01995401829481125
+            ],
+            "joint_positions": [
+              -0.07024526596069336,
+              0.8066092133522034,
+              0.0027577648870646954,
+              -1.7038965225219727,
+              -0.00529715558513999,
+              2.5061194896698,
+              0.5390318036079407,
+              0.039999935775995255,
+              0.03999997675418854
+            ],
+            "distance_to_goal": 0.227692112326622,
+            "is_grasped": false,
+            "ever_grasped": false,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": -6.891787052154541e-08,
+            "trajectory_id": "c78e150bc0104fa3a2144572bc473b06"
+          },
+          "trajectory_id": "c78e150bc0104fa3a2144572bc473b06",
+          "feedback_samples": 14
+        },
+        {
+          "skill": "grasp",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792573976.0818746,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "grasp",
+            "steps": 58,
+            "cube_position": [
+              0.0517316609621048,
+              -0.04470440372824669,
+              0.020488085225224495
+            ],
+            "goal_position": [
+              0.059971727430820465,
+              -0.02057252824306488,
+              0.24631159007549286
+            ],
+            "tcp_position": [
+              0.048664528876543045,
+              -0.04505614936351776,
+              0.019552066922187805
+            ],
+            "joint_positions": [
+              -0.07026638090610504,
+              0.8070465326309204,
+              0.002810938283801079,
+              -1.704168677330017,
+              -0.005169307813048363,
+              2.506030559539795,
+              0.5389580130577087,
+              0.01830565556883812,
+              0.01827315241098404
+            ],
+            "distance_to_goal": 0.22725866734981537,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": 0.00048808567225933075,
+            "trajectory_id": "c78e150bc0104fa3a2144572bc473b06"
+          },
+          "trajectory_id": "c78e150bc0104fa3a2144572bc473b06",
+          "feedback_samples": 3
+        },
+        {
+          "skill": "transport",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792573978.9639995,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "transport",
+            "steps": 99,
+            "cube_position": [
+              0.0553918182849884,
+              -0.0198286734521389,
+              0.24507905542850494
+            ],
+            "goal_position": [
+              0.059971727430820465,
+              -0.02057252824306488,
+              0.24631159007549286
+            ],
+            "tcp_position": [
+              0.05232514441013336,
+              -0.020177962258458138,
+              0.24413950741291046
+            ],
+            "joint_positions": [
+              -0.038898564875125885,
+              0.4406585991382599,
+              0.010278916917741299,
+              -1.675742268562317,
+              -0.005986857693642378,
+              2.112422227859497,
+              0.5761213898658752,
+              0.018316572532057762,
+              0.018275296315550804
+            ],
+            "distance_to_goal": 0.004800836089998484,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.22507905587553978,
+            "trajectory_id": "c78e150bc0104fa3a2144572bc473b06"
+          },
+          "trajectory_id": "c78e150bc0104fa3a2144572bc473b06",
+          "feedback_samples": 12
+        },
+        {
+          "skill": "verify",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792573979.9165335,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "verify",
+            "steps": 99,
+            "cube_position": [
+              0.0553918182849884,
+              -0.0198286734521389,
+              0.24507905542850494
+            ],
+            "goal_position": [
+              0.059971727430820465,
+              -0.02057252824306488,
+              0.24631159007549286
+            ],
+            "tcp_position": [
+              0.05232514441013336,
+              -0.020177962258458138,
+              0.24413950741291046
+            ],
+            "joint_positions": [
+              -0.038898564875125885,
+              0.4406585991382599,
+              0.010278916917741299,
+              -1.675742268562317,
+              -0.005986857693642378,
+              2.112422227859497,
+              0.5761213898658752,
+              0.018316572532057762,
+              0.018275296315550804
+            ],
+            "distance_to_goal": 0.004800836089998484,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.22507905587553978,
+            "trajectory_id": "c78e150bc0104fa3a2144572bc473b06"
+          },
+          "trajectory_id": "c78e150bc0104fa3a2144572bc473b06",
+          "feedback_samples": 0
+        }
+      ],
+      "plan": [
+        "approach",
+        "grasp",
+        "transport",
+        "verify"
+      ],
+      "trajectory_id": "c78e150bc0104fa3a2144572bc473b06",
+      "duration_sec": 11.06,
+      "final_observation": {
+        "timestamp": 1792573980.9735508,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "verify",
+        "steps": 99,
+        "cube_position": [
+          0.0553918182849884,
+          -0.0198286734521389,
+          0.24507905542850494
+        ],
+        "goal_position": [
+          0.059971727430820465,
+          -0.02057252824306488,
+          0.24631159007549286
+        ],
+        "tcp_position": [
+          0.05232514441013336,
+          -0.020177962258458138,
+          0.24413950741291046
+        ],
+        "joint_positions": [
+          -0.038898564875125885,
+          0.4406585991382599,
+          0.010278916917741299,
+          -1.675742268562317,
+          -0.005986857693642378,
+          2.112422227859497,
+          0.5761213898658752,
+          0.018316572532057762,
+          0.018275296315550804
+        ],
+        "distance_to_goal": 0.004800836089998484,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": true,
+        "lift_height": 0.22507905587553978,
+        "trajectory_id": "c78e150bc0104fa3a2144572bc473b06",
+        "age_sec": 0.143,
+        "active_job": null,
+        "source": "/roboweave/arm/state"
+      }
+    },
+    {
+      "id": "0b95a4c627c54e05bb3fdf56f43ad3db",
+      "text": "Pick up the red cube, move it to the green goal, and verify the result.",
+      "seed": 0,
+      "fault_injection": true,
+      "status": "succeeded",
+      "started_at": 1792573749.4716034,
+      "recoveries": 1,
+      "steps": [
+        {
+          "skill": "approach",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792573753.432296,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "approach",
+            "steps": 41,
+            "cube_position": [
+              -0.0007478409097529948,
+              0.05364227667450905,
+              0.01999993808567524
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.0033646924421191216,
+              0.053715307265520096,
+              0.021917179226875305
+            ],
+            "joint_positions": [
+              0.035780489444732666,
+              0.6882758736610413,
+              0.050045035779476166,
+              -1.9341522455215454,
+              -0.06268305331468582,
+              2.618149995803833,
+              0.5535562038421631,
+              0.039999958127737045,
+              0.03999995440244675
+            ],
+            "distance_to_goal": 0.2760053873062134,
+            "is_grasped": false,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": -6.146728992462158e-08,
+            "trajectory_id": "8e62a14101bb4b318802b8da13b45223"
+          },
+          "trajectory_id": "8e62a14101bb4b318802b8da13b45223",
+          "feedback_samples": 13
+        },
+        {
+          "skill": "grasp",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792573757.6501684,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "grasp",
+            "steps": 99,
+            "cube_position": [
+              -0.0009479879518039525,
+              0.05476296320557594,
+              0.020635932683944702
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.0035751285031437874,
+              0.053587328642606735,
+              0.02162141352891922
+            ],
+            "joint_positions": [
+              0.03526993468403816,
+              0.6886976957321167,
+              0.05037883296608925,
+              -1.934186339378357,
+              -0.06351147592067719,
+              2.6177854537963867,
+              0.5535075068473816,
+              0.0183041300624609,
+              0.018274415284395218
+            ],
+            "distance_to_goal": 0.2756343483924866,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": 0.000635933130979538,
+            "trajectory_id": "8e62a14101bb4b318802b8da13b45223"
+          },
+          "trajectory_id": "8e62a14101bb4b318802b8da13b45223",
+          "feedback_samples": 4
+        },
+        {
+          "skill": "transport",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792573760.5765176,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "transport",
+            "steps": 143,
+            "cube_position": [
+              0.01980324648320675,
+              -0.00027717731427401304,
+              0.28727370500564575
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.017173491418361664,
+              -0.0014512136112898588,
+              0.2882542014122009
+            ],
+            "joint_positions": [
+              -0.05641496554017067,
+              0.2882574796676636,
+              0.059105440974235535,
+              -1.7882674932479858,
+              -0.01665382832288742,
+              2.0732693672180176,
+              0.43159356713294983,
+              0.018318872898817062,
+              0.018277302384376526
+            ],
+            "distance_to_goal": 0.007404989097267389,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.2672737054526806,
+            "trajectory_id": "8e62a14101bb4b318802b8da13b45223"
+          },
+          "trajectory_id": "8e62a14101bb4b318802b8da13b45223",
+          "feedback_samples": 14
+        },
+        {
+          "skill": "verify",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792573761.478179,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "verify",
+            "steps": 143,
+            "cube_position": [
+              0.01980324648320675,
+              -0.00027717731427401304,
+              0.28727370500564575
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.017173491418361664,
+              -0.0014512136112898588,
+              0.2882542014122009
+            ],
+            "joint_positions": [
+              -0.05641496554017067,
+              0.2882574796676636,
+              0.059105440974235535,
+              -1.7882674932479858,
+              -0.01665382832288742,
+              2.0732693672180176,
+              0.43159356713294983,
+              0.018318872898817062,
+              0.018277302384376526
+            ],
+            "distance_to_goal": 0.007404989097267389,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.2672737054526806,
+            "trajectory_id": "8e62a14101bb4b318802b8da13b45223"
+          },
+          "trajectory_id": "8e62a14101bb4b318802b8da13b45223",
+          "feedback_samples": 1
+        }
+      ],
+      "plan": [
+        "approach",
+        "grasp",
+        "transport",
+        "verify"
+      ],
+      "trajectory_id": "8e62a14101bb4b318802b8da13b45223",
+      "duration_sec": 14.02,
+      "final_observation": {
+        "timestamp": 1792573763.2871113,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "verify",
+        "steps": 143,
+        "cube_position": [
+          0.01980324648320675,
+          -0.00027717731427401304,
+          0.28727370500564575
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          0.017173491418361664,
+          -0.0014512136112898588,
+          0.2882542014122009
+        ],
+        "joint_positions": [
+          -0.05641496554017067,
+          0.2882574796676636,
+          0.059105440974235535,
+          -1.7882674932479858,
+          -0.01665382832288742,
+          2.0732693672180176,
+          0.43159356713294983,
+          0.018318872898817062,
+          0.018277302384376526
+        ],
+        "distance_to_goal": 0.007404989097267389,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": true,
+        "lift_height": 0.2672737054526806,
+        "trajectory_id": "8e62a14101bb4b318802b8da13b45223",
+        "age_sec": 0.203,
+        "active_job": null,
+        "source": "/roboweave/arm/state"
+      }
+    },
+    {
+      "id": "9a0652f6c4a14a6d8a75cf58f8980c26",
+      "text": "Pick up the red cube, move it to the green goal, and verify the result.",
+      "seed": 0,
+      "fault_injection": false,
+      "status": "succeeded",
+      "started_at": 1792573669.5485883,
+      "recoveries": 0,
+      "steps": [
+        {
+          "skill": "approach",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792573674.2320786,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "approach",
+            "steps": 41,
+            "cube_position": [
+              -0.0007478409097529948,
+              0.05364227667450905,
+              0.01999993808567524
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.0033646924421191216,
+              0.053715307265520096,
+              0.021917179226875305
+            ],
+            "joint_positions": [
+              0.035780489444732666,
+              0.6882758736610413,
+              0.050045035779476166,
+              -1.9341522455215454,
+              -0.06268305331468582,
+              2.618149995803833,
+              0.5535562038421631,
+              0.039999958127737045,
+              0.03999995440244675
+            ],
+            "distance_to_goal": 0.2760053873062134,
+            "is_grasped": false,
+            "ever_grasped": false,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": -6.146728992462158e-08,
+            "trajectory_id": "5d797f75330a4b618f81de299952ba60"
+          },
+          "trajectory_id": "5d797f75330a4b618f81de299952ba60",
+          "feedback_samples": 13
+        },
+        {
+          "skill": "grasp",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792573675.8872488,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "grasp",
+            "steps": 53,
+            "cube_position": [
+              -0.0008528664475306869,
+              0.054553791880607605,
+              0.020551856607198715
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              -0.0036322474479675293,
+              0.053716208785772324,
+              0.021578945219516754
+            ],
+            "joint_positions": [
+              0.03575703874230385,
+              0.6886758208274841,
+              0.05008306726813316,
+              -1.9343994855880737,
+              -0.06258045881986618,
+              2.618065118789673,
+              0.5534984469413757,
+              0.018303895369172096,
+              0.018274245783686638
+            ],
+            "distance_to_goal": 0.27566367387771606,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": false,
+            "lift_height": 0.000551857054233551,
+            "trajectory_id": "5d797f75330a4b618f81de299952ba60"
+          },
+          "trajectory_id": "5d797f75330a4b618f81de299952ba60",
+          "feedback_samples": 4
+        },
+        {
+          "skill": "transport",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792573678.5996025,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "transport",
+            "steps": 97,
+            "cube_position": [
+              0.01995118148624897,
+              -0.0006195348687469959,
+              0.28722336888313293
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.01716962456703186,
+              -0.0014568674378097057,
+              0.28824615478515625
+            ],
+            "joint_positions": [
+              -0.05594132840633392,
+              0.28822553157806396,
+              0.05849185585975647,
+              -1.7883306741714478,
+              -0.016131598502397537,
+              2.0733470916748047,
+              0.4317754805088043,
+              0.018318654969334602,
+              0.018277151510119438
+            ],
+            "distance_to_goal": 0.00720423087477684,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.26722336933016777,
+            "trajectory_id": "5d797f75330a4b618f81de299952ba60"
+          },
+          "trajectory_id": "5d797f75330a4b618f81de299952ba60",
+          "feedback_samples": 14
+        },
+        {
+          "skill": "verify",
+          "status": "succeeded",
+          "success": true,
+          "reason": "postcondition_passed",
+          "ros_status": 4,
+          "observation": {
+            "timestamp": 1792573679.7032738,
+            "environment": "ManiSkill PickCube-v1",
+            "robot": "Panda",
+            "frame_id": "world",
+            "phase": "verify",
+            "steps": 97,
+            "cube_position": [
+              0.01995118148624897,
+              -0.0006195348687469959,
+              0.28722336888313293
+            ],
+            "goal_position": [
+              0.026815734803676605,
+              -0.0019813179969787598,
+              0.2889334559440613
+            ],
+            "tcp_position": [
+              0.01716962456703186,
+              -0.0014568674378097057,
+              0.28824615478515625
+            ],
+            "joint_positions": [
+              -0.05594132840633392,
+              0.28822553157806396,
+              0.05849185585975647,
+              -1.7883306741714478,
+              -0.016131598502397537,
+              2.0733470916748047,
+              0.4317754805088043,
+              0.018318654969334602,
+              0.018277151510119438
+            ],
+            "distance_to_goal": 0.00720423087477684,
+            "is_grasped": true,
+            "ever_grasped": true,
+            "is_robot_static": true,
+            "native_success": true,
+            "lift_height": 0.26722336933016777,
+            "trajectory_id": "5d797f75330a4b618f81de299952ba60"
+          },
+          "trajectory_id": "5d797f75330a4b618f81de299952ba60",
+          "feedback_samples": 1
+        }
+      ],
+      "plan": [
+        "approach",
+        "grasp",
+        "transport",
+        "verify"
+      ],
+      "trajectory_id": "5d797f75330a4b618f81de299952ba60",
+      "duration_sec": 11.83,
+      "final_observation": {
+        "timestamp": 1792573681.2622213,
+        "environment": "ManiSkill PickCube-v1",
+        "robot": "Panda",
+        "frame_id": "world",
+        "phase": "verify",
+        "steps": 97,
+        "cube_position": [
+          0.01995118148624897,
+          -0.0006195348687469959,
+          0.28722336888313293
+        ],
+        "goal_position": [
+          0.026815734803676605,
+          -0.0019813179969787598,
+          0.2889334559440613
+        ],
+        "tcp_position": [
+          0.01716962456703186,
+          -0.0014568674378097057,
+          0.28824615478515625
+        ],
+        "joint_positions": [
+          -0.05594132840633392,
+          0.28822553157806396,
+          0.05849185585975647,
+          -1.7883306741714478,
+          -0.016131598502397537,
+          2.0733470916748047,
+          0.4317754805088043,
+          0.018318654969334602,
+          0.018277151510119438
+        ],
+        "distance_to_goal": 0.00720423087477684,
+        "is_grasped": true,
+        "ever_grasped": true,
+        "is_robot_static": true,
+        "native_success": true,
+        "lift_height": 0.26722336933016777,
+        "trajectory_id": "5d797f75330a4b618f81de299952ba60",
+        "age_sec": 0.116,
+        "active_job": null,
+        "source": "/roboweave/arm/state"
+      }
+    }
+  ],
+  "scope": "真实 SAPIEN 物理仿真；特权物体状态 + 官方运动规划器；尚未验证真机"
+}

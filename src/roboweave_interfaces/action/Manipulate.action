@@ -1,0 +1,20 @@
+# Bounded skill contract. Adapter owns calibration, planning and actuation.
+string skill
+string object_id
+string frame_id
+float64 timeout_sec
+int32 seed
+bool inject_fault
+---
+bool success
+string reason
+string observation_json
+string trajectory_id
+---
+string phase
+float64[3] tcp_position
+float64[3] object_position
+float64 distance_to_goal
+bool is_grasped
+uint32 steps
+float64 elapsed_sec

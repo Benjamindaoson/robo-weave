@@ -184,6 +184,9 @@ demo_assets/
 # RoboWeave local state / credentials
 .tools/
 artifacts/roboweave/
+artifacts/arm/
+artifacts/arm-baseline/
+.venv-arm/
 secrets/
 .env
 .env.*
