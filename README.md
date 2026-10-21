@@ -1,111 +1,77 @@
-# RAI
+# RoboWeave — RAI / ROS 2 Execution & Recovery
 
-RAI is a flexible AI agent framework to develop and deploy Embodied AI features for your robots.
+RoboWeave turns a natural-language task into **real ROS 2 skill calls, execution feedback, sensor verification, and bounded failure recovery**. It provides a concrete execution-layer prototype for later robot integration.
 
-📚 Visit [robotecai.github.io/rai](https://robotecai.github.io/rai/) for the latest documentation, setup
-guide and tutorials. 📚
+**Current scope:** ROS 2 Jazzy + turtlesim planar motion. Physical robots, arm manipulation, collision-aware navigation, ARM/Jetson deployment and onboard/offline LLM inference have **not** been validated. DeepSeek currently runs through a remote API.
 
----
+![Actual application after a successful recovery task](docs/evidence/dashboard.png)
 
-<div align="center">
+## What actually runs
 
-![rai-image](./docs/imgs/RAI_simple_diagram_medium.png)
-
----
-
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-![GitHub Release](https://img.shields.io/github/v/release/RobotecAI/rai)
-![Contributors](https://img.shields.io/github/contributors/robotecai/rai)
-[![codecov](https://codecov.io/gh/RobotecAI/rai/graph/badge.svg?token=4EP49Q8GDG)](https://codecov.io/gh/RobotecAI/rai)
-[![arXiv](https://img.shields.io/badge/arXiv-2505.07532-b31b1b.svg)](https://arxiv.org/abs/2505.07532)
-
-![Static Badge](https://img.shields.io/badge/Ubuntu-24.04-orange)
-![Static Badge](https://img.shields.io/badge/Ubuntu-22.04-orange)
-![Static Badge](https://img.shields.io/badge/Python-3.12-blue)
-![Static Badge](https://img.shields.io/badge/Python-3.10-blue)
-![Static Badge](https://img.shields.io/badge/ROS2-jazzy-blue)
-![Static Badge](https://img.shields.io/badge/ROS2-humble-blue)
-
-[![](https://dcbadge.limes.pink/api/server/https://discord.gg/3PGHgTaJSB)](https://discord.gg/3PGHgTaJSB)
-
-</div>
-
----
-
-## 🎯 Overview
-
-| Category                       | Description                                       | Features                                                                                                                                                           |
-| ------------------------------ | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 🤖 **Multi-Agent Systems**     | Empowering robotics with advanced AI capabilities | • Seamlessly integrate Gen AI capabilities into your robots<br>• Enable sophisticated agent-based architectures                                                    |
-| 🔄 **Robot Intelligence**      | Enhancing robotic systems with smart features     | • Add natural human-robot interaction capabilities<br>• Bring flexible problem-solving to your existing stack<br>• Provide ready-to-use AI features out of the box |
-| 🌟 **Multi-Modal Interaction** | Supporting diverse interaction capabilities       | • Handle diverse data types natively<br>• Enable rich sensory integration<br>• Process multiple input/output modalities simultaneously                             |
-
-## RAI framework
-
--   [x] rai core: Core functionality for multi-agent system, human-robot interaction and
-        multi-modalities.
--   [x] rai whoami: Tool to extract and synthesize robot embodiment information from a structured
-        directory of documentation, images, and URDFs.
--   [x] rai_asr: Speech-to-text models and tools.
--   [x] rai_tts: Text-to-speech models and tools.
--   [x] rai_sim: Package for connecting RAI to simulation environments.
--   [x] rai_bench: Benchmarking suite for RAI. Test agents, models, tools, simulators, etc.
--   [x] rai_perception: Object detection tools based on open-set models and machine learning techniques.
--   [x] rai_nomad: Integration with NoMaD for navigation.
--   [ ] rai_finetune: Finetune LLMs on your embodied data.
-
-### Getting started
-
-See [Quick setup guide](https://robotecai.github.io/rai/setup/install).
-
-### Simulation demos
-
-Try RAI yourself with these demos:
-| Application | Robot | Description | Docs Link |
-| ------------------------------------------ | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------- |
-| Mission and obstacle reasoning in orchards | Autonomous tractor | In a beautiful scene of a virtual orchard, RAI goes beyond obstacle detection to analyze best course of action for a given unexpected situation. | [link](https://robotecai.github.io/rai/demos/agriculture/) |
-| Manipulation tasks with natural language | Robot Arm (Franka Panda) | Complete flexible manipulation tasks thanks to RAI and Grounded SAM 2 | [link](https://robotecai.github.io/rai/demos/manipulation/) |
-| Autonomous mobile robot demo | Husarion ROSbot XL | Demonstrate RAI's interaction with an autonomous mobile robot platform for navigation and control | [link](https://robotecai.github.io/rai/demos/rosbot_xl/) |
-| Agentic mobile manipulator | RB-KAIROS | A comprehensive demo with on-board execution | [link](https://github.com/RobotecAI/agentic-mobile-manipulator) |
-
-## Community
-
-### Embodied AI Community Group
-
-RAI is one of the main projects in focus of the
-[Embodied AI Community Group](https://github.com/ros-wg-embodied-ai). If you would like to join the
-next meeting, look for it in the
-[ROS Community Calendar](https://calendar.google.com/calendar/u/0/embed?src=c_3fc5c4d6ece9d80d49f136c1dcd54d7f44e1acefdbe87228c92ff268e85e2ea0@group.calendar.google.com&ctz=Etc/UTC).
-
-### Publicity
-
--   A talk about [RAI at ROSCon 2024](https://vimeo.com/1026029511).
-
-### RAI Q&A
-
-Please take a look at [Q&A](https://github.com/RobotecAI/rai/discussions/categories/q-a).
-
-### Developer Resources
-
-See our [documentation](https://robotecai.github.io/rai/) for a deeper dive into RAI, including
-instructions on creating a configuration specifically for your robot.
-
-### Contributing
-
-You are welcome to contribute to RAI! Please see our [Contribution Guide](CONTRIBUTING.md).
-
-### Citation
-
-If you find our work helpful for your research, please consider citing the following BibTeX entry.
-
-```bibtex
-@misc{rachwał2025raiflexibleagentframework,
-      title={RAI: Flexible Agent Framework for Embodied AI},
-      author={Kajetan Rachwał and Maciej Majek and Bartłomiej Boczek and Kacper Dąbrowski and Paweł Liberadzki and Adam Dąbrowski and Maria Ganzha},
-      year={2025},
-      eprint={2505.07532},
-      archivePrefix={arXiv},
-      primaryClass={cs.MA},
-      url={https://arxiv.org/abs/2505.07532},
-}
+```text
+Task → RAI ReAct / DeepSeek → validated skill → ROS 2 Action
+                                             ↓ feedback / result
+                            turtlesim ← Twist controller
+                               ↓ Pose
+                         sensor verifier → success / bounded recovery
 ```
+
+- **Planner:** upstream RAI ReAct chooses tools from live observations and an ordered coordinate task.
+- **Executor:** `ROS2Connector` calls `/roboweave/move_to_pose`, with typed goals, feedback, results and cancellation.
+- **Recovery:** only a confirmed, aborted injected transient failure gets one re-observation and retry. Cancellation, timeout, stale observations and unknown execution state do not automatically retry.
+- **Verifier:** measured position and observation age determine success; LLM prose cannot override the verdict.
+- **Shared state / trajectory:** per-task events, Agent messages, actual pose trajectory and final results are persisted.
+- **Dashboard:** native simulator screenshots, current pose, actual event timeline and task history, with an authenticated allowlisted presentation gateway.
+
+These are one LLM planner and deterministic execution/recovery/verification modules, not three independent LLM agents.
+
+## Evidence
+
+| Check | Observed result |
+|---|---|
+| Unmodified official `examples/agents/react_ros2.py` | Native RotateAbsolute action completed; status 2 → 4, 75 changed poses, 29 HRI response chunks; requested theta 1.2, measured 1.184 rad |
+| Ordered two-goal task | Both sensor postconditions passed, 12.26 seconds in the recorded run |
+| Injected failure | Native ABORTED(6), re-observation, one retry, task succeeded |
+| Cancellation | Native CANCELED(5), final linear and angular velocity zero |
+| Invalid goal / deadline | Out-of-bounds goal rejected; timeout aborted with 21 feedback samples, then zero velocity |
+| Public HTTP task | Authenticated task completed; unauthenticated API 401, cross-origin command 403, disallowed path 404 |
+| Targeted tests | 57 upstream-related tests + 3 application guard tests = **60 passed** |
+| Restart | Simulator feedback recovered after container restart; UI recovery task succeeded again |
+
+These are engineering checks and individual execution records, not benchmark success rates. See [machine-readable evidence](docs/evidence/verification.json) and the [normal](docs/evidence/normal-events.jsonl), [recovery](docs/evidence/recovery-events.jsonl), and [cancellation](docs/evidence/cancel-events.jsonl) event traces.
+
+An early stale-observation failure exposed Python ROS executor scheduling delays. The application now uses a single-threaded callback executor and a separate motion worker, preserving the one-second observation threshold. A stale X11 lock after container restart was also reproduced and repaired. The serving process supervises its essential children.
+
+## Run
+
+The verified installation uses Linux x86_64, ROS 2 Jazzy, Python 3.12, a project-local `.venv`, and the upstream `uv.lock`. This 2D demonstration does not require a GPU.
+
+See [deployment instructions](docs/roboweave-deployment.md) for the tested prepared-workspace commands and the new clean-build Docker recipe. **A second clean-machine image build has not yet been verified.** The existing cloud deployment is running; publication does not replace or restart it.
+
+Public demonstration: [RoboWeave RAI](https://resort-catherine-continent-tackle.trycloudflare.com). Access requires a separately supplied password. This is a temporary Quick Tunnel hostname and may change or expire; credentials are never included in this repository. Do not expose the unauthenticated runtime directly to the Internet.
+
+## Repository map
+
+| Path | Purpose |
+|---|---|
+| `roboweave/runtime.py` | RAI execution loop, ordered-plan enforcement, bounded recovery and receipts |
+| `roboweave/motion_node.py` | Actual turtlesim ROS 2 adapter and failure injection |
+| `src/roboweave_interfaces/` | MoveToPose goal / feedback / result contract |
+| `roboweave/index.html` | Live task UI |
+| `roboweave/public_gateway.py` | Authentication and route / Origin checks |
+| `scripts/verify_roboweave_rai.py` | HTTP → LLM → RAI → ROS → simulator integration checks |
+| `scripts/official_probe.py` | Official Agent entrypoint probe |
+| `scripts/verify_ros_boundaries.py` | Native goal rejection and timeout checks |
+| `roboweave/test_guards.py` | Out-of-plan, concurrent-call and unknown-state guards |
+
+## Migration to a robot
+
+Keep the task runtime, explicit Action contract, feedback handling, failure latch and logging. Replace the turtlesim driver in `motion_node.py` and the Pose conversion/subscription in `Runtime.on_pose` with the selected robot's driver and measured state. Define physical units, coordinate frames, transforms, workspace limits and tolerances: the present `[1,10]` bounds and distance thresholds use turtlesim units.
+
+The physical adapter must own emergency stop, collision checks, command watchdog and speed/acceleration limits. Re-run the acceptance suite with that hardware. This repository is an interface-validation starting point, not a drop-in robot driver or a physical safety certification.
+
+## Upstream and license
+
+Based on [RobotecAI/RAI](https://github.com/RobotecAI/rai), commit `b018729833742c6f71e1e9f332ee2b435676fb4f`. Upstream Git history, source, examples and Apache-2.0 license are retained. The original README is [README.upstream.md](README.upstream.md). Vendored [rai_interfaces](https://github.com/RobotecAI/rai_interfaces) is pinned to `f03dc0f217679980447dfead177979f485eb44f6` with its original license.
+
+Upstream workflows requiring RobotecAI-specific runners or deployment credentials are preserved under `docs/upstream-workflows/`. The active RoboWeave CI checks source syntax only; live ROS and LLM tests are separately reported above.

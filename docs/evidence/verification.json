@@ -1,0 +1,198 @@
+{
+  "scope": "ROS 2 Jazzy turtlesim 2D execution and bounded recovery; physical robot and onboard inference unverified",
+  "upstream_commit": "b018729833742c6f71e1e9f332ee2b435676fb4f",
+  "official_example": {
+    "path": "examples/agents/react_ros2.py",
+    "unmodified": true,
+    "passed": true,
+    "requested_theta": 1.2,
+    "final_theta": 1.184000015258789,
+    "changed_pose_samples": 75,
+    "hri_response_chunks": 29,
+    "native_action_statuses": [
+      [
+        2
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  "acceptance": [
+    {
+      "id": "81b71bf06cbb4fc6a1c939c612e2e140",
+      "text": "依次移动到 (8,7) 和 (3,8)，严格按顺序执行。",
+      "status": "succeeded",
+      "started_at": 1792570901.0920978,
+      "recoveries": 0,
+      "verified_goals": [
+        {
+          "x": 8.0,
+          "y": 7.0
+        },
+        {
+          "x": 3.0,
+          "y": 8.0
+        }
+      ],
+      "fault_injection": false,
+      "steps": [
+        {
+          "x": 8.0,
+          "y": 7.0,
+          "status": "succeeded"
+        },
+        {
+          "x": 3.0,
+          "y": 8.0,
+          "status": "succeeded"
+        }
+      ],
+      "expected_goals": [
+        {
+          "x": 8.0,
+          "y": 7.0
+        },
+        {
+          "x": 3.0,
+          "y": 8.0
+        }
+      ],
+      "duration_sec": 12.26,
+      "finished_at": 1792570913.3484824,
+      "final_observation": {
+        "pose": {
+          "x": 3.0758087635040283,
+          "y": 7.989712238311768,
+          "theta": 3.0067055225372314,
+          "linear_velocity": 0.0,
+          "angular_velocity": 0.0
+        },
+        "age_sec": 0.007,
+        "source": "/turtle1/pose",
+        "frame": "turtlesim_world"
+      }
+    },
+    {
+      "id": "770e7c58e5ea4cb1812407c406e7ce51",
+      "text": "依次移动到 (7,3) 和 (4,6)，严格按顺序执行。",
+      "status": "succeeded",
+      "started_at": 1792570914.158188,
+      "recoveries": 1,
+      "verified_goals": [
+        {
+          "x": 7.0,
+          "y": 3.0
+        },
+        {
+          "x": 4.0,
+          "y": 6.0
+        }
+      ],
+      "fault_injection": true,
+      "steps": [
+        {
+          "x": 7.0,
+          "y": 3.0,
+          "status": "succeeded"
+        },
+        {
+          "x": 4.0,
+          "y": 6.0,
+          "status": "succeeded"
+        }
+      ],
+      "expected_goals": [
+        {
+          "x": 7.0,
+          "y": 3.0
+        },
+        {
+          "x": 4.0,
+          "y": 6.0
+        }
+      ],
+      "duration_sec": 14.89,
+      "finished_at": 1792570929.0466723,
+      "final_observation": {
+        "pose": {
+          "x": 4.048282146453857,
+          "y": 5.942185878753662,
+          "theta": 2.2665927410125732,
+          "linear_velocity": 0.0,
+          "angular_velocity": 0.0
+        },
+        "age_sec": 0.009,
+        "source": "/turtle1/pose",
+        "frame": "turtlesim_world"
+      }
+    },
+    {
+      "id": "6ced86d8678d48198a0da1a422c37a58",
+      "text": "移动到 (10,1)，到达后验证位置。",
+      "status": "stopped",
+      "started_at": 1792570929.22383,
+      "recoveries": 0,
+      "verified_goals": [],
+      "fault_injection": false,
+      "steps": [
+        {
+          "x": 10.0,
+          "y": 1.0,
+          "status": "failed"
+        }
+      ],
+      "expected_goals": [
+        {
+          "x": 10.0,
+          "y": 1.0
+        }
+      ],
+      "duration_sec": 3.49,
+      "finished_at": 1792570932.7162712,
+      "final_observation": {
+        "pose": {
+          "x": 4.048282146453857,
+          "y": 5.942185878753662,
+          "theta": 2.02659273147583,
+          "linear_velocity": 0.0,
+          "angular_velocity": 0.0
+        },
+        "age_sec": 0.015,
+        "source": "/turtle1/pose",
+        "frame": "turtlesim_world"
+      }
+    }
+  ],
+  "native_boundaries": {
+    "invalid_goal_rejected": true,
+    "timeout_ros_status": 6,
+    "timeout_reason": "execution_timeout",
+    "feedback_count": 21,
+    "stopped_velocity": [
+      0.0,
+      0.0
+    ]
+  },
+  "tests": {
+    "upstream_related": 57,
+    "application_guards": 3,
+    "passed": 60,
+    "warnings": [
+      "optional audio: ffmpeg absent",
+      "audioop deprecated"
+    ]
+  },
+  "public_http_checks": {
+    "authenticated_task": "succeeded",
+    "unauthenticated_api": 401,
+    "cross_origin_post": 403,
+    "non_allowlisted_route": 404
+  },
+  "limitations": [
+    "2D simulator only",
+    "No physical hardware validation",
+    "DeepSeek uses remote API",
+    "Clean-machine rebuild not yet verified"
+  ]
+}

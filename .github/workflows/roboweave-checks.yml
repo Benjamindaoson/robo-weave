@@ -1,0 +1,23 @@
+name: RoboWeave source checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Python and shell syntax
+        run: |
+          python -m compileall -q roboweave scripts/official_probe.py scripts/verify_roboweave_rai.py scripts/verify_ros_boundaries.py
+          bash -n scripts/run_roboweave_rai.sh scripts/start_roboweave_rai_container.sh
+      - name: Dashboard JavaScript syntax
+        run: |
+          python -c "from pathlib import Path; import re; Path('/tmp/roboweave-ui.js').write_text(re.search(r'<script>(.*?)</script>', Path('roboweave/index.html').read_text(), re.S).group(1))"
+          node --check /tmp/roboweave-ui.js

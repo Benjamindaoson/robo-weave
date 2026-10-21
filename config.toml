@@ -10,10 +10,10 @@ embeddings_model = "amazon.titan-embed-text-v1"
 region_name = "us-east-1"
 
 [openai]
-simple_model = "gpt-4o-mini"
-complex_model = "gpt-4o"
+simple_model = "deepseek-chat"
+complex_model = "deepseek-chat"
 embeddings_model = "text-embedding-ada-002"
-base_url = "https://api.openai.com/v1/"
+base_url = "https://api.deepseek.com/v1"
 
 [ollama]
 simple_model = "llama3.2"

@@ -180,3 +180,15 @@ src/rai_interfaces
 
 # Demo assets
 demo_assets/
+
+# RoboWeave local state / credentials
+.tools/
+artifacts/roboweave/
+secrets/
+.env
+.env.*
+!.env.example
+*.env
+*.env.example
+!deepseek.env.example
+!share.env.example

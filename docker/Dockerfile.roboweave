@@ -1,0 +1,17 @@
+FROM ros:jazzy-ros-base@sha256:103b6c417973394659af6804d4917cd489b91e5ed22eb7bef263025a3bed2410
+SHELL ["/bin/bash", "-c"]
+RUN apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    python3-venv python3-dev g++-14 libstdc++-14-dev \
+    ros-jazzy-turtlesim ros-jazzy-vision-msgs ros-jazzy-nav2-msgs \
+    ros-jazzy-tf-transformations ros-jazzy-tf2-geometry-msgs ros-jazzy-cv-bridge \
+    libgl1 libglib2.0-0t64 xvfb xauth curl git && rm -rf /var/lib/apt/lists/*
+RUN python3 -m venv /opt/uv && /opt/uv/bin/pip install --no-cache-dir uv==0.13.4
+WORKDIR /rai
+COPY . /rai
+RUN /opt/uv/bin/uv venv --python /usr/bin/python3 --system-site-packages .venv && \
+    /opt/uv/bin/uv sync --locked && \
+    /opt/uv/bin/uv pip install --python .venv/bin/python -r requirements-roboweave.txt
+RUN source /opt/ros/jazzy/setup.bash && \
+    CC=gcc-14 CXX=g++-14 colcon build --packages-select rai_interfaces roboweave_interfaces --symlink-install
+ENV ROS_DOMAIN_ID=73 ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST
+CMD ["bash", "scripts/run_roboweave_rai.sh"]

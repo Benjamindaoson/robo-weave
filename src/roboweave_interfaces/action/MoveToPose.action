@@ -1,0 +1,16 @@
+# Target in the turtlesim world frame; physical adapter must define its own frame mapping.
+float64 x
+float64 y
+float64 timeout_sec
+---
+bool success
+string reason
+float64 final_x
+float64 final_y
+float64 distance
+---
+float64 x
+float64 y
+float64 theta
+float64 distance_remaining
+float64 elapsed_sec
