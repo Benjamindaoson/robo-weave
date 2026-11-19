@@ -4,6 +4,16 @@ RoboWeave turns a natural-language manipulation task into **real ROS 2 skill cal
 Panda arm motion, contact feedback, native task verification and bounded recovery**.
 The primary demonstration now runs **ManiSkill / SAPIEN PickCube**.
 
+## CV-aligned project summary
+
+**Project focus:** Language-driven robotic manipulation with explicit action verification and bounded failure recovery.
+
+- Integrated one LLM planner with ROS 2 manipulation skills and Panda-arm simulation in ManiSkill/SAPIEN.
+- Implemented measured contact-state monitoring, native task verification, execution deadlines, cancellation, and bounded recovery.
+- Injected an open-gripper failure; contact verification detected the failed grasp, the ROS 2 action aborted, and the runtime re-observed and recovered within one bounded retry.
+
+**Scope boundary:** This is validated 3D robot simulation, not physical robot deployment. It uses one LLM planner with deterministic execution, recovery, and verification roles—not multiple independent LLM agents.
+
 **[Open the live arm demo](https://wedding-transcript-visitors-ultram.trycloudflare.com)**
 — HTTPS with a separately supplied access code. This temporary Quick Tunnel
 hostname may change or expire; no permanent domain has been configured.
